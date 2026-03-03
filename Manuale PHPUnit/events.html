@@ -1,0 +1,1017 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4. Events &mdash; PHPUnit unknown Manual</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=3f1b9271"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="copyright" title="Copyright" href="copyright.html" />
+    <link rel="next" title="5. The XML Configuration File" href="configuration.html" />
+    <link rel="prev" title="3. Annotations" href="annotations.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PHPUnit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">1. Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#php-on-the-command-line">PHP on the Command-Line</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#installing-the-php-command-line-interpreter">Installing the PHP Command-Line Interpreter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#fedora">Fedora</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#debian">Debian</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#ubuntu">Ubuntu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#macos">macOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#windows">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#using-the-php-command-line-interpreter">Using the PHP Command-Line Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#configuring-php-for-development">Configuring PHP for Development</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installing-phpunit">Installing PHPUnit</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#php-archive-phar">PHP Archive (PHAR)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#manual-download-of-phar">Manual Download of PHAR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#installing-phpunit-with-phive">Installing PHPUnit with Phive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#updating-phpunit-with-phive">Updating PHPUnit with Phive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#what-is-inside-the-phar">What is inside the PHAR?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#composer">Composer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#installing-phpunit-with-composer">Installing PHPUnit with Composer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#updating-phpunit-with-composer">Updating PHPUnit with Composer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#phar-or-composer">PHAR or Composer?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#global-installation">Global Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#web-server">Web Server</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="writing-tests-for-phpunit.html">2. Writing Tests for PHPUnit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="writing-tests-for-phpunit.html#asserting-return-values">Asserting Return Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing-tests-for-phpunit.html#expecting-exceptions">Expecting Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing-tests-for-phpunit.html#data-providers">Data Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing-tests-for-phpunit.html#testing-output">Testing Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing-tests-for-phpunit.html#incomplete-tests">Incomplete Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing-tests-for-phpunit.html#skipping-tests">Skipping Tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="writing-tests-for-phpunit.html#skipping-tests-using-attributes">Skipping Tests using Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="writing-tests-for-phpunit.html#test-dependencies">Test Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing-tests-for-phpunit.html#failure-output">Failure Output</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="writing-tests-for-phpunit.html#edge-cases">Edge Cases</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="textui.html">3. The Command-Line Test Runner</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="textui.html#outcome-and-issues">Outcome and Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="textui.html#output">Output</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="textui.html#versions-and-configuration">Versions and Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textui.html#progress">Progress</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textui.html#test-results">Test Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textui.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="textui.html#command-line-options">Command-Line Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="textui.html#configuration">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textui.html#selection">Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textui.html#execution">Execution</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#isolation">Isolation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#risky-tests">Risky Tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#automatically-stop-when">Automatically stop when …</a></li>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#exit-with-error-code-when">Exit with error code when …</a></li>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#test-result-cache">Test Result Cache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#test-order">Test Order</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="textui.html#reporting">Reporting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#console">Console</a></li>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#progress-and-result-printing">Progress and Result Printing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#details-about-issues">Details about Issues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#alternative-output">Alternative Output</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="textui.html#logging">Logging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#code-coverage">Code Coverage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="organizing-tests.html">4. Organizing Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="organizing-tests.html#composing-a-test-suite-using-the-filesystem">Composing a Test Suite Using the Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizing-tests.html#composing-a-test-suite-using-xml-configuration">Composing a Test Suite Using XML Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fixtures.html">5. Fixtures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fixtures.html#more-setup-than-teardown">More setUp() than tearDown()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixtures.html#sharing-fixture">Sharing Fixture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixtures.html#global-state">Global State</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="test-doubles.html">6. Test Doubles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="test-doubles.html#test-stubs">Test Stubs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="test-doubles.html#creating-test-stubs">Creating Test Stubs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#createstub"><code class="docutils literal notranslate"><span class="pre">createStub()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#createstubforintersectionofinterfaces"><code class="docutils literal notranslate"><span class="pre">createStubForIntersectionOfInterfaces()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#createconfiguredstub"><code class="docutils literal notranslate"><span class="pre">createConfiguredStub()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="test-doubles.html#configuring-test-stubs">Configuring Test Stubs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#willreturn"><code class="docutils literal notranslate"><span class="pre">willReturn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#willthrowexception"><code class="docutils literal notranslate"><span class="pre">willThrowException()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#willreturnargument"><code class="docutils literal notranslate"><span class="pre">willReturnArgument()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#willreturncallback"><code class="docutils literal notranslate"><span class="pre">willReturnCallback()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#willreturnself"><code class="docutils literal notranslate"><span class="pre">willReturnSelf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#willreturnmap"><code class="docutils literal notranslate"><span class="pre">willReturnMap()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#get-hooked-properties">Get-Hooked Properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="test-doubles.html#mock-objects">Mock Objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="test-doubles.html#creating-mock-objects">Creating Mock Objects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#createmock"><code class="docutils literal notranslate"><span class="pre">createMock()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#createmockforintersectionofinterfaces"><code class="docutils literal notranslate"><span class="pre">createMockForIntersectionOfInterfaces()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#createconfiguredmock"><code class="docutils literal notranslate"><span class="pre">createConfiguredMock()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#getmockforabstractclass"><code class="docutils literal notranslate"><span class="pre">getMockForAbstractClass()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#getmockfortrait"><code class="docutils literal notranslate"><span class="pre">getMockForTrait()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#getmockfromwsdl"><code class="docutils literal notranslate"><span class="pre">getMockFromWsdl()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#getmockbuilder"><code class="docutils literal notranslate"><span class="pre">getMockBuilder()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="test-doubles.html#configuring-mock-objects">Configuring Mock Objects</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code-coverage.html">7. Code Coverage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code-coverage.html#software-metrics-for-code-coverage">Software Metrics for Code Coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-coverage.html#including-files">Including Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-coverage.html#targeting-units-of-code">Targeting Units of Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-coverage.html#ignoring-code-blocks">Ignoring Code Blocks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="risky-tests.html">8. Risky Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="risky-tests.html#useless-tests">Useless Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="risky-tests.html#unintentionally-covered-code">Unintentionally Covered Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="risky-tests.html#output-during-test-execution">Output During Test Execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="risky-tests.html#test-execution-timeout">Test Execution Timeout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="risky-tests.html#global-state-manipulation">Global State Manipulation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="error-handling.html">9. Error Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="error-handling.html#limiting-issues-to-your-code">Limiting issues to “your code”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error-handling.html#ignoring-issue-suppression">Ignoring issue suppression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error-handling.html#ignoring-previously-reported-issues">Ignoring previously reported issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error-handling.html#expecting-deprecations-e-user-deprecated">Expecting Deprecations (<code class="docutils literal notranslate"><span class="pre">E_USER_DEPRECATED</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error-handling.html#disabling-phpunit-s-error-handler">Disabling PHPUnit’s error handler</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="extending-phpunit.html">10. Extending PHPUnit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="extending-phpunit.html#enhancing-concrete-test-cases">Enhancing concrete test cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extending-phpunit.html#extracting-abstract-test-cases">Extracting abstract test cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extending-phpunit.html#extracting-traits">Extracting traits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extending-phpunit.html#extending-the-test-runner">Extending the Test Runner</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="extending-phpunit.html#implementing-an-extension">Implementing an extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="extending-phpunit.html#implementing-an-event-subscriber">Implementing an event subscriber</a></li>
+<li class="toctree-l4"><a class="reference internal" href="extending-phpunit.html#implementing-an-event-tracer">Implementing an event tracer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="extending-phpunit.html#understanding-events">Understanding events</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="extending-phpunit.html#sharing-an-extension">Sharing an extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="extending-phpunit.html#sharing-an-extension-as-a-phar">Sharing an extension as a PHAR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="extending-phpunit.html#sharing-an-extension-as-a-composer-package">Sharing an extension as a Composer package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="extending-phpunit.html#registering-an-extension">Registering an extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="extending-phpunit.html#registering-an-extension-from-a-phar">Registering an extension from a PHAR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="extending-phpunit.html#registering-an-extension-from-a-composer-package">Registering an extension from a Composer package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="extending-phpunit.html#debugging-phpunit">Debugging PHPUnit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="extending-phpunit.html#wrapping-the-test-runner">Wrapping the Test Runner</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="assertions.html">1. Assertions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#static-vs-non-static-usage-of-assertion-methods">Static vs. Non-Static Usage of Assertion Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#boolean">Boolean</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#asserttrue"><code class="docutils literal notranslate"><span class="pre">assertTrue()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertfalse"><code class="docutils literal notranslate"><span class="pre">assertFalse()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#appendixes-assertions-identity">Identity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertsame"><code class="docutils literal notranslate"><span class="pre">assertSame()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertarrayisidenticaltoarrayonlyconsideringlistofkeys"><code class="docutils literal notranslate"><span class="pre">assertArrayIsIdenticalToArrayOnlyConsideringListOfKeys()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertarrayisidenticaltoarrayignoringlistofkeys"><code class="docutils literal notranslate"><span class="pre">assertArrayIsIdenticalToArrayIgnoringListOfKeys()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#equality">Equality</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertequals"><code class="docutils literal notranslate"><span class="pre">assertEquals()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertequalscanonicalizing"><code class="docutils literal notranslate"><span class="pre">assertEqualsCanonicalizing()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertequalsignoringcase"><code class="docutils literal notranslate"><span class="pre">assertEqualsIgnoringCase()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertequalswithdelta"><code class="docutils literal notranslate"><span class="pre">assertEqualsWithDelta()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertobjectequals"><code class="docutils literal notranslate"><span class="pre">assertObjectEquals()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertfileequals"><code class="docutils literal notranslate"><span class="pre">assertFileEquals()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertarrayisequaltoarrayonlyconsideringlistofkeys"><code class="docutils literal notranslate"><span class="pre">assertArrayIsEqualToArrayOnlyConsideringListOfKeys()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertarrayisequaltoarrayignoringlistofkeys"><code class="docutils literal notranslate"><span class="pre">assertArrayIsEqualToArrayIgnoringListOfKeys()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#iterable">Iterable</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertarrayhaskey"><code class="docutils literal notranslate"><span class="pre">assertArrayHasKey()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontains"><code class="docutils literal notranslate"><span class="pre">assertContains()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonly"><code class="docutils literal notranslate"><span class="pre">assertContainsOnly()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlyarray"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyArray()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlybool"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyBool()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlycallable"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyCallable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlyfloat"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyFloat()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlyint"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyInt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlyiterable"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyIterable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlynull"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyNull()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlynumeric"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyNumeric()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlyobject"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyObject()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlyresource"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyResource()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlyclosedresource"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyClosedResource()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlyscalar"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyScalar()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlystring"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyString()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlyinstancesof"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyInstancesOf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#objects">Objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertobjecthasproperty"><code class="docutils literal notranslate"><span class="pre">assertObjectHasProperty()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#cardinality">Cardinality</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcount"><code class="docutils literal notranslate"><span class="pre">assertCount()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertsamesize"><code class="docutils literal notranslate"><span class="pre">assertSameSize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertempty"><code class="docutils literal notranslate"><span class="pre">assertEmpty()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertgreaterthan"><code class="docutils literal notranslate"><span class="pre">assertGreaterThan()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertgreaterthanorequal"><code class="docutils literal notranslate"><span class="pre">assertGreaterThanOrEqual()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertlessthan"><code class="docutils literal notranslate"><span class="pre">assertLessThan()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertlessthanorequal"><code class="docutils literal notranslate"><span class="pre">assertLessThanOrEqual()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#types">Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertinstanceof"><code class="docutils literal notranslate"><span class="pre">assertInstanceOf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisarray"><code class="docutils literal notranslate"><span class="pre">assertIsArray()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertislist"><code class="docutils literal notranslate"><span class="pre">assertIsList()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisbool"><code class="docutils literal notranslate"><span class="pre">assertIsBool()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertiscallable"><code class="docutils literal notranslate"><span class="pre">assertIsCallable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisfloat"><code class="docutils literal notranslate"><span class="pre">assertIsFloat()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisint"><code class="docutils literal notranslate"><span class="pre">assertIsInt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisiterable"><code class="docutils literal notranslate"><span class="pre">assertIsIterable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisnumeric"><code class="docutils literal notranslate"><span class="pre">assertIsNumeric()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisobject"><code class="docutils literal notranslate"><span class="pre">assertIsObject()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisresource"><code class="docutils literal notranslate"><span class="pre">assertIsResource()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisscalar"><code class="docutils literal notranslate"><span class="pre">assertIsScalar()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisstring"><code class="docutils literal notranslate"><span class="pre">assertIsString()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertnull"><code class="docutils literal notranslate"><span class="pre">assertNull()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#strings">Strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertstringstartswith"><code class="docutils literal notranslate"><span class="pre">assertStringStartsWith()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertstringendswith"><code class="docutils literal notranslate"><span class="pre">assertStringEndsWith()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertstringcontainsstring"><code class="docutils literal notranslate"><span class="pre">assertStringContainsString()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertstringcontainsstringignoringcase"><code class="docutils literal notranslate"><span class="pre">assertStringContainsStringIgnoringCase()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertstringequalsstringignoringlineendings"><code class="docutils literal notranslate"><span class="pre">assertStringEqualsStringIgnoringLineEndings()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertmatchesregularexpression"><code class="docutils literal notranslate"><span class="pre">assertMatchesRegularExpression()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertstringmatchesformat"><code class="docutils literal notranslate"><span class="pre">assertStringMatchesFormat()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertstringmatchesformatfile"><code class="docutils literal notranslate"><span class="pre">assertStringMatchesFormatFile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertfilematchesformat"><code class="docutils literal notranslate"><span class="pre">assertFileMatchesFormat()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertfilematchesformatfile"><code class="docutils literal notranslate"><span class="pre">assertFileMatchesFormatFile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertstringequalsfile"><code class="docutils literal notranslate"><span class="pre">assertStringEqualsFile()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#json">JSON</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertjson"><code class="docutils literal notranslate"><span class="pre">assertJson()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertjsonfileequalsjsonfile"><code class="docutils literal notranslate"><span class="pre">assertJsonFileEqualsJsonFile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertjsonstringequalsjsonfile"><code class="docutils literal notranslate"><span class="pre">assertJsonStringEqualsJsonFile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertjsonstringequalsjsonstring"><code class="docutils literal notranslate"><span class="pre">assertJsonStringEqualsJsonString()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#xml">XML</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertxmlfileequalsxmlfile"><code class="docutils literal notranslate"><span class="pre">assertXmlFileEqualsXmlFile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertxmlstringequalsxmlfile"><code class="docutils literal notranslate"><span class="pre">assertXmlStringEqualsXmlFile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertxmlstringequalsxmlstring"><code class="docutils literal notranslate"><span class="pre">assertXmlStringEqualsXmlString()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#filesystem">Filesystem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertdirectoryexists"><code class="docutils literal notranslate"><span class="pre">assertDirectoryExists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertdirectoryisreadable"><code class="docutils literal notranslate"><span class="pre">assertDirectoryIsReadable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertdirectoryiswritable"><code class="docutils literal notranslate"><span class="pre">assertDirectoryIsWritable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertfileexists"><code class="docutils literal notranslate"><span class="pre">assertFileExists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertfileisreadable"><code class="docutils literal notranslate"><span class="pre">assertFileIsReadable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertfileiswritable"><code class="docutils literal notranslate"><span class="pre">assertFileIsWritable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisreadable"><code class="docutils literal notranslate"><span class="pre">assertIsReadable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertiswritable"><code class="docutils literal notranslate"><span class="pre">assertIsWritable()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#math">Math</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertinfinite"><code class="docutils literal notranslate"><span class="pre">assertInfinite()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertnan"><code class="docutils literal notranslate"><span class="pre">assertNan()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#constraints">Constraints</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertthat"><code class="docutils literal notranslate"><span class="pre">assertThat()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="attributes.html">2. Attributes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="attributes.html#test"><code class="docutils literal notranslate"><span class="pre">Test</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="attributes.html#testdox"><code class="docutils literal notranslate"><span class="pre">TestDox</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="attributes.html#disablereturnvaluegenerationfortestdoubles"><code class="docutils literal notranslate"><span class="pre">DisableReturnValueGenerationForTestDoubles</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="attributes.html#doesnotperformassertions"><code class="docutils literal notranslate"><span class="pre">DoesNotPerformAssertions</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="attributes.html#ignoredeprecations"><code class="docutils literal notranslate"><span class="pre">IgnoreDeprecations</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="attributes.html#withouterrorhandler"><code class="docutils literal notranslate"><span class="pre">WithoutErrorHandler</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="attributes.html#code-coverage">Code Coverage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#coversclass"><code class="docutils literal notranslate"><span class="pre">CoversClass</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#coverstrait"><code class="docutils literal notranslate"><span class="pre">CoversTrait</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#coversmethod"><code class="docutils literal notranslate"><span class="pre">CoversMethod</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#coversfunction"><code class="docutils literal notranslate"><span class="pre">CoversFunction</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#coversnothing"><code class="docutils literal notranslate"><span class="pre">CoversNothing</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#usesclass"><code class="docutils literal notranslate"><span class="pre">UsesClass</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#usestrait"><code class="docutils literal notranslate"><span class="pre">UsesTrait</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#usesmethod"><code class="docutils literal notranslate"><span class="pre">UsesMethod</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#usesfunction"><code class="docutils literal notranslate"><span class="pre">UsesFunction</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="attributes.html#data-provider">Data Provider</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#dataprovider"><code class="docutils literal notranslate"><span class="pre">DataProvider</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#dataproviderexternal"><code class="docutils literal notranslate"><span class="pre">DataProviderExternal</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#testwith"><code class="docutils literal notranslate"><span class="pre">TestWith</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#testwithjson"><code class="docutils literal notranslate"><span class="pre">TestWithJson</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="attributes.html#test-dependencies">Test Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#depends"><code class="docutils literal notranslate"><span class="pre">Depends</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#dependsusingdeepclone"><code class="docutils literal notranslate"><span class="pre">DependsUsingDeepClone</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#dependsusingshallowclone"><code class="docutils literal notranslate"><span class="pre">DependsUsingShallowClone</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#dependsexternal"><code class="docutils literal notranslate"><span class="pre">DependsExternal</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#dependsexternalusingdeepclone"><code class="docutils literal notranslate"><span class="pre">DependsExternalUsingDeepClone</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#dependsexternalusingshallowclone"><code class="docutils literal notranslate"><span class="pre">DependsExternalUsingShallowClone</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#dependsonclass"><code class="docutils literal notranslate"><span class="pre">DependsOnClass</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#dependsonclassusingdeepclone"><code class="docutils literal notranslate"><span class="pre">DependsOnClassUsingDeepClone</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#dependsonclassusingshallowclone"><code class="docutils literal notranslate"><span class="pre">DependsOnClassUsingShallowClone</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="attributes.html#test-groups">Test Groups</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#group"><code class="docutils literal notranslate"><span class="pre">Group</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#small"><code class="docutils literal notranslate"><span class="pre">Small</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#medium"><code class="docutils literal notranslate"><span class="pre">Medium</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#large"><code class="docutils literal notranslate"><span class="pre">Large</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#ticket"><code class="docutils literal notranslate"><span class="pre">Ticket</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="attributes.html#template-methods">Template Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#beforeclass"><code class="docutils literal notranslate"><span class="pre">BeforeClass</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#before"><code class="docutils literal notranslate"><span class="pre">Before</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#precondition"><code class="docutils literal notranslate"><span class="pre">PreCondition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#postcondition"><code class="docutils literal notranslate"><span class="pre">PostCondition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#after"><code class="docutils literal notranslate"><span class="pre">After</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#afterclass"><code class="docutils literal notranslate"><span class="pre">AfterClass</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="attributes.html#test-isolation">Test Isolation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#backupglobals"><code class="docutils literal notranslate"><span class="pre">BackupGlobals</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#excludeglobalvariablefrombackup"><code class="docutils literal notranslate"><span class="pre">ExcludeGlobalVariableFromBackup</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#backupstaticproperties"><code class="docutils literal notranslate"><span class="pre">BackupStaticProperties</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#excludestaticpropertyfrombackup"><code class="docutils literal notranslate"><span class="pre">ExcludeStaticPropertyFromBackup</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#runinseparateprocess"><code class="docutils literal notranslate"><span class="pre">RunInSeparateProcess</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#runtestsinseparateprocesses"><code class="docutils literal notranslate"><span class="pre">RunTestsInSeparateProcesses</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#runclassinseparateprocess"><code class="docutils literal notranslate"><span class="pre">RunClassInSeparateProcess</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#preserveglobalstate"><code class="docutils literal notranslate"><span class="pre">PreserveGlobalState</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="attributes.html#skipping-tests">Skipping Tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#requiresphp"><code class="docutils literal notranslate"><span class="pre">RequiresPhp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#requiresphpextension"><code class="docutils literal notranslate"><span class="pre">RequiresPhpExtension</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#requiressetting"><code class="docutils literal notranslate"><span class="pre">RequiresSetting</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#requiresphpunit"><code class="docutils literal notranslate"><span class="pre">RequiresPhpunit</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#requiresphpunitextension"><code class="docutils literal notranslate"><span class="pre">RequiresPhpunitExtension</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#requiresfunction"><code class="docutils literal notranslate"><span class="pre">RequiresFunction</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#requiresmethod"><code class="docutils literal notranslate"><span class="pre">RequiresMethod</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#requiresoperatingsystem"><code class="docutils literal notranslate"><span class="pre">RequiresOperatingSystem</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="attributes.html#requiresoperatingsystemfamily"><code class="docutils literal notranslate"><span class="pre">RequiresOperatingSystemFamily</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="annotations.html">3. Annotations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#author">&#64;author</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#after">&#64;after</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#afterclass">&#64;afterClass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#backupglobals">&#64;backupGlobals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#backupstaticattributes">&#64;backupStaticAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#before">&#64;before</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#beforeclass">&#64;beforeClass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#codecoverageignore">&#64;codeCoverageIgnore*</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#covers">&#64;covers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#coversdefaultclass">&#64;coversDefaultClass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#coversnothing">&#64;coversNothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#dataprovider">&#64;dataProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#depends">&#64;depends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#doesnotperformassertions">&#64;doesNotPerformAssertions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#group">&#64;group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#large">&#64;large</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#medium">&#64;medium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#preserveglobalstate">&#64;preserveGlobalState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#requires">&#64;requires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#runtestsinseparateprocesses">&#64;runTestsInSeparateProcesses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#runinseparateprocess">&#64;runInSeparateProcess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#small">&#64;small</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#test">&#64;test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#testdox">&#64;testdox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#testwith">&#64;testWith</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#ticket">&#64;ticket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#uses">&#64;uses</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Events</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#application">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testrunner">TestRunner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testsuite">TestSuite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test">Test</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">5. The XML Configuration File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#the-phpunit-element">The <code class="docutils literal notranslate"><span class="pre">&lt;phpunit&gt;</span></code> Element</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-backupglobals-attribute">The <code class="docutils literal notranslate"><span class="pre">backupGlobals</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-backupstaticproperties-attribute">The <code class="docutils literal notranslate"><span class="pre">backupStaticProperties</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-bootstrap-attribute">The <code class="docutils literal notranslate"><span class="pre">bootstrap</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-cachedirectory-attribute">The <code class="docutils literal notranslate"><span class="pre">cacheDirectory</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-cacheresult-attribute">The <code class="docutils literal notranslate"><span class="pre">cacheResult</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-colors-attribute">The <code class="docutils literal notranslate"><span class="pre">colors</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-columns-attribute">The <code class="docutils literal notranslate"><span class="pre">columns</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-controlgarbagecollector-attribute">The <code class="docutils literal notranslate"><span class="pre">controlGarbageCollector</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-numberoftestsbeforegarbagecollection-attribute">The <code class="docutils literal notranslate"><span class="pre">numberOfTestsBeforeGarbageCollection</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-requirecoveragemetadata-attribute">The <code class="docutils literal notranslate"><span class="pre">requireCoverageMetadata</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-processisolation-attribute">The <code class="docutils literal notranslate"><span class="pre">processIsolation</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stopondefect-attribute">The <code class="docutils literal notranslate"><span class="pre">stopOnDefect</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stoponerror-attribute">The <code class="docutils literal notranslate"><span class="pre">stopOnError</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stoponfailure-attribute">The <code class="docutils literal notranslate"><span class="pre">stopOnFailure</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stoponwarning-attribute">The <code class="docutils literal notranslate"><span class="pre">stopOnWarning</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stoponrisky-attribute">The <code class="docutils literal notranslate"><span class="pre">stopOnRisky</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stopondeprecation-attribute">The <code class="docutils literal notranslate"><span class="pre">stopOnDeprecation</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stoponnotice-attribute">The <code class="docutils literal notranslate"><span class="pre">stopOnNotice</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stoponskipped-attribute">The <code class="docutils literal notranslate"><span class="pre">stopOnSkipped</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stoponincomplete-attribute">The <code class="docutils literal notranslate"><span class="pre">stopOnIncomplete</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-failonallissues-attribute">The <code class="docutils literal notranslate"><span class="pre">failOnAllIssues</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-failonemptytestsuite-attribute">The <code class="docutils literal notranslate"><span class="pre">failOnEmptyTestSuite</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-failonwarning-attribute">The <code class="docutils literal notranslate"><span class="pre">failOnWarning</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-failonrisky-attribute">The <code class="docutils literal notranslate"><span class="pre">failOnRisky</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-failondeprecation-attribute">The <code class="docutils literal notranslate"><span class="pre">failOnDeprecation</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-failonphpunitdeprecation-attribute">The <code class="docutils literal notranslate"><span class="pre">failOnPhpunitDeprecation</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-failonnotice-attribute">The <code class="docutils literal notranslate"><span class="pre">failOnNotice</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-failonskipped-attribute">The <code class="docutils literal notranslate"><span class="pre">failOnSkipped</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-failonincomplete-attribute">The <code class="docutils literal notranslate"><span class="pre">failOnIncomplete</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-bestrictaboutchangestoglobalstate-attribute">The <code class="docutils literal notranslate"><span class="pre">beStrictAboutChangesToGlobalState</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-bestrictaboutoutputduringtests-attribute">The <code class="docutils literal notranslate"><span class="pre">beStrictAboutOutputDuringTests</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-bestrictaboutteststhatdonottestanything-attribute">The <code class="docutils literal notranslate"><span class="pre">beStrictAboutTestsThatDoNotTestAnything</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-bestrictaboutcoveragemetadata-attribute">The <code class="docutils literal notranslate"><span class="pre">beStrictAboutCoverageMetadata</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-enforcetimelimit-attribute">The <code class="docutils literal notranslate"><span class="pre">enforceTimeLimit</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-defaulttimelimit-attribute">The <code class="docutils literal notranslate"><span class="pre">defaultTimeLimit</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-timeoutforsmalltests-attribute">The <code class="docutils literal notranslate"><span class="pre">timeoutForSmallTests</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-timeoutformediumtests-attribute">The <code class="docutils literal notranslate"><span class="pre">timeoutForMediumTests</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-timeoutforlargetests-attribute">The <code class="docutils literal notranslate"><span class="pre">timeoutForLargeTests</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-defaulttestsuite-attribute">The <code class="docutils literal notranslate"><span class="pre">defaultTestSuite</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stderr-attribute">The <code class="docutils literal notranslate"><span class="pre">stderr</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-reversedefectlist-attribute">The <code class="docutils literal notranslate"><span class="pre">reverseDefectList</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-registermockobjectsfromtestargumentsrecursively-attribute">The <code class="docutils literal notranslate"><span class="pre">registerMockObjectsFromTestArgumentsRecursively</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-extensionsdirectory-attribute">The <code class="docutils literal notranslate"><span class="pre">extensionsDirectory</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-executionorder-attribute">The <code class="docutils literal notranslate"><span class="pre">executionOrder</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-resolvedependencies-attribute">The <code class="docutils literal notranslate"><span class="pre">resolveDependencies</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-testdox-attribute">The <code class="docutils literal notranslate"><span class="pre">testdox</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-testdoxsummary-attribute">The <code class="docutils literal notranslate"><span class="pre">testdoxSummary</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-displaydetailsonallissues-attribute">The <code class="docutils literal notranslate"><span class="pre">displayDetailsOnAllIssues</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-displaydetailsonincompletetests-attribute">The <code class="docutils literal notranslate"><span class="pre">displayDetailsOnIncompleteTests</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-displaydetailsonskippedtests-attribute">The <code class="docutils literal notranslate"><span class="pre">displayDetailsOnSkippedTests</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-displaydetailsonteststhattriggerdeprecations-attribute">The <code class="docutils literal notranslate"><span class="pre">displayDetailsOnTestsThatTriggerDeprecations</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-displaydetailsonphpunitdeprecations-attribute">The <code class="docutils literal notranslate"><span class="pre">displayDetailsOnPhpunitDeprecations</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-displaydetailsonteststhattriggererrors-attribute">The <code class="docutils literal notranslate"><span class="pre">displayDetailsOnTestsThatTriggerErrors</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-displaydetailsonteststhattriggernotices-attribute">The <code class="docutils literal notranslate"><span class="pre">displayDetailsOnTestsThatTriggerNotices</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-displaydetailsonteststhattriggerwarnings-attribute">The <code class="docutils literal notranslate"><span class="pre">displayDetailsOnTestsThatTriggerWarnings</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-shortenarraysforexportthreshold-attribute">The <code class="docutils literal notranslate"><span class="pre">shortenArraysForExportThreshold</span></code> Attribute</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#the-testsuites-element">The <code class="docutils literal notranslate"><span class="pre">&lt;testsuites&gt;</span></code> Element</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-testsuite-element">The <code class="docutils literal notranslate"><span class="pre">&lt;testsuite&gt;</span></code> Element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-phpversion-and-phpversionoperator-attributes">The <code class="docutils literal notranslate"><span class="pre">phpVersion</span></code> and <code class="docutils literal notranslate"><span class="pre">phpVersionOperator</span></code> Attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-groups-attribute">The <code class="docutils literal notranslate"><span class="pre">groups</span></code> Attribute</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#the-source-element">The <code class="docutils literal notranslate"><span class="pre">&lt;source&gt;</span></code> Element</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-include-element">The <code class="docutils literal notranslate"><span class="pre">&lt;include&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-exclude-element">The <code class="docutils literal notranslate"><span class="pre">&lt;exclude&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-directory-element">The <code class="docutils literal notranslate"><span class="pre">&lt;directory&gt;</span></code> Element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-prefix-attribute">The <code class="docutils literal notranslate"><span class="pre">prefix</span></code> Attribute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-suffix-attribute">The <code class="docutils literal notranslate"><span class="pre">suffix</span></code> Attribute</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-file-element">The <code class="docutils literal notranslate"><span class="pre">&lt;file&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-deprecationtrigger-element">The <code class="docutils literal notranslate"><span class="pre">&lt;deprecationTrigger&gt;</span></code> Element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-function-element">The <code class="docutils literal notranslate"><span class="pre">&lt;function&gt;</span></code> Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-method-element">The <code class="docutils literal notranslate"><span class="pre">&lt;method&gt;</span></code> Element</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoreselfdeprecations-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreSelfDeprecations&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoredirectdeprecations-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreDirectDeprecations&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoreindirectdeprecations-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreIndirectDeprecations&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-restrictdeprecations-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;restrictDeprecations&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-restrictnotices-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;restrictNotices&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-restrictwarnings-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;restrictWarnings&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-baseline-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;baseline&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoresuppressionofdeprecations-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreSuppressionOfDeprecations&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoresuppressionofphpdeprecations-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreSuppressionOfPhpDeprecations&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoresuppressionoferrors-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreSuppressionOfErrors&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoresuppressionofnotices-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreSuppressionOfNotices&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoresuppressionofphpnotices-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreSuppressionOfPhpNotices&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoresuppressionofwarnings-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreSuppressionOfWarnings&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoresuppressionofphpwarnings-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreSuppressionOfPhpWarnings&gt;</span></code> Attribute</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#the-coverage-element">The <code class="docutils literal notranslate"><span class="pre">&lt;coverage&gt;</span></code> Element</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-includeuncoveredfiles-attribute">The <code class="docutils literal notranslate"><span class="pre">includeUncoveredFiles</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoredeprecatedcodeunits-attribute">The <code class="docutils literal notranslate"><span class="pre">ignoreDeprecatedCodeUnits</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-pathcoverage-attribute">The <code class="docutils literal notranslate"><span class="pre">pathCoverage</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-disablecodecoverageignore-attribute">The <code class="docutils literal notranslate"><span class="pre">disableCodeCoverageIgnore</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-report-element">The <code class="docutils literal notranslate"><span class="pre">&lt;report&gt;</span></code> Element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-clover-element">The <code class="docutils literal notranslate"><span class="pre">&lt;clover&gt;</span></code> Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-cobertura-element">The <code class="docutils literal notranslate"><span class="pre">&lt;cobertura&gt;</span></code> Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-crap4j-element">The <code class="docutils literal notranslate"><span class="pre">&lt;crap4j&gt;</span></code> Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-html-element">The <code class="docutils literal notranslate"><span class="pre">&lt;html&gt;</span></code> Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-php-element">The <code class="docutils literal notranslate"><span class="pre">&lt;php&gt;</span></code> Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-text-element">The <code class="docutils literal notranslate"><span class="pre">&lt;text&gt;</span></code> Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-xml-element">The <code class="docutils literal notranslate"><span class="pre">&lt;xml&gt;</span></code> Element</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#the-logging-element">The <code class="docutils literal notranslate"><span class="pre">&lt;logging&gt;</span></code> Element</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-junit-element">The <code class="docutils literal notranslate"><span class="pre">&lt;junit&gt;</span></code> Element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#id15">The <code class="docutils literal notranslate"><span class="pre">outputFile</span></code> Attribute</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-teamcity-element">The <code class="docutils literal notranslate"><span class="pre">&lt;teamcity&gt;</span></code> Element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#id16">The <code class="docutils literal notranslate"><span class="pre">outputFile</span></code> Attribute</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-testdoxhtml-element">The <code class="docutils literal notranslate"><span class="pre">&lt;testdoxHtml&gt;</span></code> Element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#id17">The <code class="docutils literal notranslate"><span class="pre">outputFile</span></code> Attribute</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-testdoxtext-element">The <code class="docutils literal notranslate"><span class="pre">&lt;testdoxText&gt;</span></code> Element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#id18">The <code class="docutils literal notranslate"><span class="pre">outputFile</span></code> Attribute</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#the-groups-element">The <code class="docutils literal notranslate"><span class="pre">&lt;groups&gt;</span></code> Element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#the-extensions-element">The <code class="docutils literal notranslate"><span class="pre">&lt;extensions&gt;</span></code> Element</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-bootstrap-element">The <code class="docutils literal notranslate"><span class="pre">&lt;bootstrap&gt;</span></code> Element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-parameter-element">The <code class="docutils literal notranslate"><span class="pre">&lt;parameter&gt;</span></code> Element</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#appendixes-configuration-php">The <code class="docutils literal notranslate"><span class="pre">&lt;php&gt;</span></code> Element</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-includepath-element">The <code class="docutils literal notranslate"><span class="pre">&lt;includePath&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ini-element">The <code class="docutils literal notranslate"><span class="pre">&lt;ini&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-const-element">The <code class="docutils literal notranslate"><span class="pre">&lt;const&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-var-element">The <code class="docutils literal notranslate"><span class="pre">&lt;var&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-env-element">The <code class="docutils literal notranslate"><span class="pre">&lt;env&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-get-element">The <code class="docutils literal notranslate"><span class="pre">&lt;get&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-post-element">The <code class="docutils literal notranslate"><span class="pre">&lt;post&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-cookie-element">The <code class="docutils literal notranslate"><span class="pre">&lt;cookie&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-server-element">The <code class="docutils literal notranslate"><span class="pre">&lt;server&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-files-element">The <code class="docutils literal notranslate"><span class="pre">&lt;files&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-request-element">The <code class="docutils literal notranslate"><span class="pre">&lt;request&gt;</span></code> Element</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="copyright.html">6. Copyright</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PHPUnit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4. </span>Events</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/sebastianbergmann/phpunit-documentation-english/blob/unknown/src/events.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="events">
+<span id="appendixes-events"></span><h1><span class="section-number">4. </span>Events<a class="headerlink" href="#events" title="Link to this heading"></a></h1>
+<section id="application">
+<h2>Application<a class="headerlink" href="#application" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Application\Started</span></code></p>
+<blockquote>
+<div><p>The PHPUnit CLI application was started</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Application\Finished</span></code></p>
+<blockquote>
+<div><p>The PHPUnit CLI application has finished</p>
+</div></blockquote>
+</section>
+<section id="testrunner">
+<h2>TestRunner<a class="headerlink" href="#testrunner" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestRunner\EventFacadeSealed</span></code></p>
+<blockquote>
+<div><p>The event facade was sealed; no more event subscribers can be registered</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestRunner\Configured</span></code></p>
+<blockquote>
+<div><p>The test runner was configured</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestRunner\BootstrapFinished</span></code></p>
+<blockquote>
+<div><p>The test runner finished executing the configured bootstrap script</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestRunner\ExtensionLoadedFromPhar</span></code></p>
+<blockquote>
+<div><p>The test runner loaded an extension from a PHP Archive (PHAR)</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestRunner\ExtensionBootstrapped</span></code></p>
+<blockquote>
+<div><p>The test runner bootstrapped an extension</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestRunner\Started</span></code></p>
+<blockquote>
+<div><p>The test runner started running</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestRunner\ExecutionStarted</span></code></p>
+<blockquote>
+<div><p>The test runner started executing tests</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestRunner\ChildProcessStarted</span></code></p>
+<blockquote>
+<div><p>The test runner started a PHP child process</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestRunner\ChildProcessFinished</span></code></p>
+<blockquote>
+<div><p>A PHP child process started by the test runner finished</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestRunner\DeprecationTriggered</span></code></p>
+<blockquote>
+<div><p>A deprecation in the test runner was triggered</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestRunner\WarningTriggered</span></code></p>
+<blockquote>
+<div><p>A warning in the test runner was triggered</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestRunner\ExecutionAborted</span></code></p>
+<blockquote>
+<div><p>The test runner aborted the execution of tests</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestRunner\ExecutionFinished</span></code></p>
+<blockquote>
+<div><p>The test runner finished executing tests</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestRunner\GarbageCollectionDisabled</span></code></p>
+<blockquote>
+<div><p>The test runner disabled PHP’s garbage collector</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestRunner\GarbageCollectionEnabled</span></code></p>
+<blockquote>
+<div><p>The test runner enabled PHP’s garbage collector</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestRunner\GarbageCollectionTriggered</span></code></p>
+<blockquote>
+<div><p>The test runner triggered PHP’s garbage collector</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestRunner\Finished</span></code></p>
+<blockquote>
+<div><p>The test runner finished running</p>
+</div></blockquote>
+</section>
+<section id="testsuite">
+<h2>TestSuite<a class="headerlink" href="#testsuite" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestSuite\Loaded</span></code></p>
+<blockquote>
+<div><p>The test suite was loaded</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestSuite\Filtered</span></code></p>
+<blockquote>
+<div><p>The test suite was filtered</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestSuite\Sorted</span></code></p>
+<blockquote>
+<div><p>The test suite was sorted</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestRunner\ExecutionStarted</span></code></p>
+<blockquote>
+<div><p>The test runner started executing tests</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestSuite\Skipped</span></code></p>
+<blockquote>
+<div><p>The execution of a test suite was skipped</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestSuite\Started</span></code></p>
+<blockquote>
+<div><p>The execution of a test suite was started</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\TestSuite\Finished</span></code></p>
+<blockquote>
+<div><p>The execution of a test suite has finished</p>
+</div></blockquote>
+</section>
+<section id="test">
+<h2>Test<a class="headerlink" href="#test" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\PreparationStarted</span></code></p>
+<blockquote>
+<div><p>The preparation of a test for execution was started</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\PreparationFailed</span></code></p>
+<blockquote>
+<div><p>The preparation of a test failed</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\Prepared</span></code></p>
+<blockquote>
+<div><p>The test was successfully prepared for execution</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\DataProviderMethodCalled</span></code></p>
+<blockquote>
+<div><p>A data provider method was called for a test method</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\DataProviderMethodFinished</span></code></p>
+<blockquote>
+<div><p>All data provider methods were called for a test method</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\BeforeFirstTestMethodCalled</span></code></p>
+<blockquote>
+<div><p>A “before first test” method was called for a test case class</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\BeforeFirstTestMethodErrored</span></code></p>
+<blockquote>
+<div><p>A “before first test” method errored for a test case class</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\BeforeFirstTestMethodFinished</span></code></p>
+<blockquote>
+<div><p>All “before first test” methods were called for a test case class</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\BeforeTestMethodCalled</span></code></p>
+<blockquote>
+<div><p>A “before test” method was called for a test method</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\BeforeTestMethodErrored</span></code></p>
+<blockquote>
+<div><p>A “before test” method errored for a test method</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\BeforeTestMethodFinished</span></code></p>
+<blockquote>
+<div><p>All “before test” methods were called for a test method</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\PreConditionCalled</span></code></p>
+<blockquote>
+<div><p>A “precondition” method was called for a test method</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\PreConditionErrored</span></code></p>
+<blockquote>
+<div><p>A “precondition” method errored for a test method</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\PreConditionFinished</span></code></p>
+<blockquote>
+<div><p>All “precondition” methods were called for a test method</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\TestPrepared</span></code></p>
+<blockquote>
+<div><p>A test was prepared for execution</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\ComparatorRegistered</span></code></p>
+<blockquote>
+<div><p>A test registered a custom <code class="docutils literal notranslate"><span class="pre">Comparator</span></code> for <code class="docutils literal notranslate"><span class="pre">assertEquals()</span></code></p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\MockObjectCreated</span></code></p>
+<blockquote>
+<div><p>A test created a mock object</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\MockObjectForIntersectionOfInterfacesCreated</span></code></p>
+<blockquote>
+<div><p>A test created a mock object for an intersection of interfaces</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\MockObjectForTraitCreated</span></code></p>
+<blockquote>
+<div><p>A test created a mock object for a trait</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\MockObjectForAbstractClassCreated</span></code></p>
+<blockquote>
+<div><p>A test created a mock object for an abstract class</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\MockObjectFromWsdlCreated</span></code></p>
+<blockquote>
+<div><p>A test created a mock object from a WSDL file</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\PartialMockObjectCreated</span></code></p>
+<blockquote>
+<div><p>A test created a partial mock object</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\TestProxyCreated</span></code></p>
+<blockquote>
+<div><p>A test created a test proxy</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\TestStubCreated</span></code></p>
+<blockquote>
+<div><p>A test created a test stub</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\TestStubForIntersectionOfInterfacesCreated</span></code></p>
+<blockquote>
+<div><p>A test created a test stub for an intersection of interfaces</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\Errored</span></code></p>
+<blockquote>
+<div><p>A test errored</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\Failed</span></code></p>
+<blockquote>
+<div><p>A test failed</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\Passed</span></code></p>
+<blockquote>
+<div><p>A test passed</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\PrintedUnexpectedOutput</span></code></p>
+<blockquote>
+<div><p>A test printed unexpected output</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\ConsideredRisky</span></code></p>
+<blockquote>
+<div><p>A test was considered risky</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\MarkedIncomplete</span></code></p>
+<blockquote>
+<div><p>A test was marked incomplete</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\Skipped</span></code></p>
+<blockquote>
+<div><p>A test was skipped</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\PhpunitDeprecationTriggered</span></code></p>
+<blockquote>
+<div><p>A test triggered a PHPUnit deprecation</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\PhpDeprecationTriggered</span></code></p>
+<blockquote>
+<div><p>A test triggered a PHP deprecation</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\DeprecationTriggered</span></code></p>
+<blockquote>
+<div><p>A test triggered a deprecation (neither a PHPUnit nor a PHP deprecation)</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\PhpunitErrorTriggered</span></code></p>
+<blockquote>
+<div><p>A test triggered a PHPUnit error</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\ErrorTriggered</span></code></p>
+<blockquote>
+<div><p>A test triggered an error (not a PHPUnit error)</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\PhpNoticeTriggered</span></code></p>
+<blockquote>
+<div><p>A test triggered a PHP notice</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\NoticeTriggered</span></code></p>
+<blockquote>
+<div><p>A test triggered a notice (not a PHP notice)</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\PhpunitWarningTriggered</span></code></p>
+<blockquote>
+<div><p>A test triggered a PHPUnit warning</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\PhpWarningTriggered</span></code></p>
+<blockquote>
+<div><p>A test triggered a PHP warning</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\WarningTriggered</span></code></p>
+<blockquote>
+<div><p>A test triggered a warning (neither a PHPUnit nor a PHP warning)</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\Finished</span></code></p>
+<blockquote>
+<div><p>The execution of a test method finished</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\PostConditionCalled</span></code></p>
+<blockquote>
+<div><p>A “postcondition” method was called for a test method</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\PostConditionErrored</span></code></p>
+<blockquote>
+<div><p>A “postcondition” method errored for a test method</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\PostConditionFinished</span></code></p>
+<blockquote>
+<div><p>All “postcondition” methods were called for a test method</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\AfterTestMethodCalled</span></code></p>
+<blockquote>
+<div><p>An “after test” method was called for a test method</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\AfterTestMethodErrored</span></code></p>
+<blockquote>
+<div><p>An “after test” method errored for a test method</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\AfterTestMethodFinished</span></code></p>
+<blockquote>
+<div><p>All “after test” methods were called for a test method</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\AfterLastTestMethodCalled</span></code></p>
+<blockquote>
+<div><p>An “after last test” method was called for a test case class</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\AfterLastTestMethodErrored</span></code></p>
+<blockquote>
+<div><p>An “after last test” method errored for a test case class</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PHPUnit\Event\Test\AfterLastTestMethodFinished</span></code></p>
+<blockquote>
+<div><p>All “after last test” methods were called for a test case class</p>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="annotations.html" class="btn btn-neutral float-left" title="3. Annotations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="configuration.html" class="btn btn-neutral float-right" title="5. The XML Configuration File" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; <a href="copyright.html">Copyright</a> 2026, Sebastian Bergmann.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

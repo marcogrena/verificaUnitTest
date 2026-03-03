@@ -1,0 +1,2119 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2. Attributes &mdash; PHPUnit unknown Manual</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=3f1b9271"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="copyright" title="Copyright" href="copyright.html" />
+    <link rel="next" title="3. Annotations" href="annotations.html" />
+    <link rel="prev" title="1. Assertions" href="assertions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PHPUnit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">1. Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#php-on-the-command-line">PHP on the Command-Line</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#installing-the-php-command-line-interpreter">Installing the PHP Command-Line Interpreter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#fedora">Fedora</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#debian">Debian</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#ubuntu">Ubuntu</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#macos">macOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#windows">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#using-the-php-command-line-interpreter">Using the PHP Command-Line Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#configuring-php-for-development">Configuring PHP for Development</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installing-phpunit">Installing PHPUnit</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#php-archive-phar">PHP Archive (PHAR)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#manual-download-of-phar">Manual Download of PHAR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#installing-phpunit-with-phive">Installing PHPUnit with Phive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#updating-phpunit-with-phive">Updating PHPUnit with Phive</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#what-is-inside-the-phar">What is inside the PHAR?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#composer">Composer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#installing-phpunit-with-composer">Installing PHPUnit with Composer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#updating-phpunit-with-composer">Updating PHPUnit with Composer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#phar-or-composer">PHAR or Composer?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#global-installation">Global Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#web-server">Web Server</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="writing-tests-for-phpunit.html">2. Writing Tests for PHPUnit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="writing-tests-for-phpunit.html#asserting-return-values">Asserting Return Values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing-tests-for-phpunit.html#expecting-exceptions">Expecting Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing-tests-for-phpunit.html#data-providers">Data Providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing-tests-for-phpunit.html#testing-output">Testing Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing-tests-for-phpunit.html#incomplete-tests">Incomplete Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing-tests-for-phpunit.html#skipping-tests">Skipping Tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="writing-tests-for-phpunit.html#skipping-tests-using-attributes">Skipping Tests using Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="writing-tests-for-phpunit.html#test-dependencies">Test Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="writing-tests-for-phpunit.html#failure-output">Failure Output</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="writing-tests-for-phpunit.html#edge-cases">Edge Cases</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="textui.html">3. The Command-Line Test Runner</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="textui.html#outcome-and-issues">Outcome and Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="textui.html#output">Output</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="textui.html#versions-and-configuration">Versions and Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textui.html#progress">Progress</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textui.html#test-results">Test Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textui.html#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="textui.html#command-line-options">Command-Line Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="textui.html#configuration">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textui.html#selection">Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="textui.html#execution">Execution</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#isolation">Isolation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#risky-tests">Risky Tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#automatically-stop-when">Automatically stop when …</a></li>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#exit-with-error-code-when">Exit with error code when …</a></li>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#test-result-cache">Test Result Cache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#test-order">Test Order</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="textui.html#reporting">Reporting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#console">Console</a></li>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#progress-and-result-printing">Progress and Result Printing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#details-about-issues">Details about Issues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#alternative-output">Alternative Output</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="textui.html#logging">Logging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#code-coverage">Code Coverage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="textui.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="organizing-tests.html">4. Organizing Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="organizing-tests.html#composing-a-test-suite-using-the-filesystem">Composing a Test Suite Using the Filesystem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizing-tests.html#composing-a-test-suite-using-xml-configuration">Composing a Test Suite Using XML Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fixtures.html">5. Fixtures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fixtures.html#more-setup-than-teardown">More setUp() than tearDown()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixtures.html#sharing-fixture">Sharing Fixture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fixtures.html#global-state">Global State</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="test-doubles.html">6. Test Doubles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="test-doubles.html#test-stubs">Test Stubs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="test-doubles.html#creating-test-stubs">Creating Test Stubs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#createstub"><code class="docutils literal notranslate"><span class="pre">createStub()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#createstubforintersectionofinterfaces"><code class="docutils literal notranslate"><span class="pre">createStubForIntersectionOfInterfaces()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#createconfiguredstub"><code class="docutils literal notranslate"><span class="pre">createConfiguredStub()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="test-doubles.html#configuring-test-stubs">Configuring Test Stubs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#willreturn"><code class="docutils literal notranslate"><span class="pre">willReturn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#willthrowexception"><code class="docutils literal notranslate"><span class="pre">willThrowException()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#willreturnargument"><code class="docutils literal notranslate"><span class="pre">willReturnArgument()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#willreturncallback"><code class="docutils literal notranslate"><span class="pre">willReturnCallback()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#willreturnself"><code class="docutils literal notranslate"><span class="pre">willReturnSelf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#willreturnmap"><code class="docutils literal notranslate"><span class="pre">willReturnMap()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#get-hooked-properties">Get-Hooked Properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="test-doubles.html#mock-objects">Mock Objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="test-doubles.html#creating-mock-objects">Creating Mock Objects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#createmock"><code class="docutils literal notranslate"><span class="pre">createMock()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#createmockforintersectionofinterfaces"><code class="docutils literal notranslate"><span class="pre">createMockForIntersectionOfInterfaces()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#createconfiguredmock"><code class="docutils literal notranslate"><span class="pre">createConfiguredMock()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#getmockforabstractclass"><code class="docutils literal notranslate"><span class="pre">getMockForAbstractClass()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#getmockfortrait"><code class="docutils literal notranslate"><span class="pre">getMockForTrait()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#getmockfromwsdl"><code class="docutils literal notranslate"><span class="pre">getMockFromWsdl()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="test-doubles.html#getmockbuilder"><code class="docutils literal notranslate"><span class="pre">getMockBuilder()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="test-doubles.html#configuring-mock-objects">Configuring Mock Objects</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code-coverage.html">7. Code Coverage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code-coverage.html#software-metrics-for-code-coverage">Software Metrics for Code Coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-coverage.html#including-files">Including Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-coverage.html#targeting-units-of-code">Targeting Units of Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-coverage.html#ignoring-code-blocks">Ignoring Code Blocks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="risky-tests.html">8. Risky Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="risky-tests.html#useless-tests">Useless Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="risky-tests.html#unintentionally-covered-code">Unintentionally Covered Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="risky-tests.html#output-during-test-execution">Output During Test Execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="risky-tests.html#test-execution-timeout">Test Execution Timeout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="risky-tests.html#global-state-manipulation">Global State Manipulation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="error-handling.html">9. Error Handling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="error-handling.html#limiting-issues-to-your-code">Limiting issues to “your code”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error-handling.html#ignoring-issue-suppression">Ignoring issue suppression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error-handling.html#ignoring-previously-reported-issues">Ignoring previously reported issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error-handling.html#expecting-deprecations-e-user-deprecated">Expecting Deprecations (<code class="docutils literal notranslate"><span class="pre">E_USER_DEPRECATED</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="error-handling.html#disabling-phpunit-s-error-handler">Disabling PHPUnit’s error handler</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="extending-phpunit.html">10. Extending PHPUnit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="extending-phpunit.html#enhancing-concrete-test-cases">Enhancing concrete test cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extending-phpunit.html#extracting-abstract-test-cases">Extracting abstract test cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extending-phpunit.html#extracting-traits">Extracting traits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extending-phpunit.html#extending-the-test-runner">Extending the Test Runner</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="extending-phpunit.html#implementing-an-extension">Implementing an extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="extending-phpunit.html#implementing-an-event-subscriber">Implementing an event subscriber</a></li>
+<li class="toctree-l4"><a class="reference internal" href="extending-phpunit.html#implementing-an-event-tracer">Implementing an event tracer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="extending-phpunit.html#understanding-events">Understanding events</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="extending-phpunit.html#sharing-an-extension">Sharing an extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="extending-phpunit.html#sharing-an-extension-as-a-phar">Sharing an extension as a PHAR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="extending-phpunit.html#sharing-an-extension-as-a-composer-package">Sharing an extension as a Composer package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="extending-phpunit.html#registering-an-extension">Registering an extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="extending-phpunit.html#registering-an-extension-from-a-phar">Registering an extension from a PHAR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="extending-phpunit.html#registering-an-extension-from-a-composer-package">Registering an extension from a Composer package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="extending-phpunit.html#debugging-phpunit">Debugging PHPUnit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="extending-phpunit.html#wrapping-the-test-runner">Wrapping the Test Runner</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="assertions.html">1. Assertions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#static-vs-non-static-usage-of-assertion-methods">Static vs. Non-Static Usage of Assertion Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#boolean">Boolean</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#asserttrue"><code class="docutils literal notranslate"><span class="pre">assertTrue()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertfalse"><code class="docutils literal notranslate"><span class="pre">assertFalse()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#appendixes-assertions-identity">Identity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertsame"><code class="docutils literal notranslate"><span class="pre">assertSame()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertarrayisidenticaltoarrayonlyconsideringlistofkeys"><code class="docutils literal notranslate"><span class="pre">assertArrayIsIdenticalToArrayOnlyConsideringListOfKeys()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertarrayisidenticaltoarrayignoringlistofkeys"><code class="docutils literal notranslate"><span class="pre">assertArrayIsIdenticalToArrayIgnoringListOfKeys()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#equality">Equality</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertequals"><code class="docutils literal notranslate"><span class="pre">assertEquals()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertequalscanonicalizing"><code class="docutils literal notranslate"><span class="pre">assertEqualsCanonicalizing()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertequalsignoringcase"><code class="docutils literal notranslate"><span class="pre">assertEqualsIgnoringCase()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertequalswithdelta"><code class="docutils literal notranslate"><span class="pre">assertEqualsWithDelta()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertobjectequals"><code class="docutils literal notranslate"><span class="pre">assertObjectEquals()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertfileequals"><code class="docutils literal notranslate"><span class="pre">assertFileEquals()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertarrayisequaltoarrayonlyconsideringlistofkeys"><code class="docutils literal notranslate"><span class="pre">assertArrayIsEqualToArrayOnlyConsideringListOfKeys()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertarrayisequaltoarrayignoringlistofkeys"><code class="docutils literal notranslate"><span class="pre">assertArrayIsEqualToArrayIgnoringListOfKeys()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#iterable">Iterable</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertarrayhaskey"><code class="docutils literal notranslate"><span class="pre">assertArrayHasKey()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontains"><code class="docutils literal notranslate"><span class="pre">assertContains()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonly"><code class="docutils literal notranslate"><span class="pre">assertContainsOnly()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlyarray"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyArray()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlybool"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyBool()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlycallable"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyCallable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlyfloat"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyFloat()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlyint"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyInt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlyiterable"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyIterable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlynull"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyNull()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlynumeric"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyNumeric()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlyobject"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyObject()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlyresource"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyResource()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlyclosedresource"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyClosedResource()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlyscalar"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyScalar()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlystring"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyString()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcontainsonlyinstancesof"><code class="docutils literal notranslate"><span class="pre">assertContainsOnlyInstancesOf()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#objects">Objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertobjecthasproperty"><code class="docutils literal notranslate"><span class="pre">assertObjectHasProperty()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#cardinality">Cardinality</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertcount"><code class="docutils literal notranslate"><span class="pre">assertCount()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertsamesize"><code class="docutils literal notranslate"><span class="pre">assertSameSize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertempty"><code class="docutils literal notranslate"><span class="pre">assertEmpty()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertgreaterthan"><code class="docutils literal notranslate"><span class="pre">assertGreaterThan()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertgreaterthanorequal"><code class="docutils literal notranslate"><span class="pre">assertGreaterThanOrEqual()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertlessthan"><code class="docutils literal notranslate"><span class="pre">assertLessThan()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertlessthanorequal"><code class="docutils literal notranslate"><span class="pre">assertLessThanOrEqual()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#types">Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertinstanceof"><code class="docutils literal notranslate"><span class="pre">assertInstanceOf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisarray"><code class="docutils literal notranslate"><span class="pre">assertIsArray()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertislist"><code class="docutils literal notranslate"><span class="pre">assertIsList()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisbool"><code class="docutils literal notranslate"><span class="pre">assertIsBool()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertiscallable"><code class="docutils literal notranslate"><span class="pre">assertIsCallable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisfloat"><code class="docutils literal notranslate"><span class="pre">assertIsFloat()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisint"><code class="docutils literal notranslate"><span class="pre">assertIsInt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisiterable"><code class="docutils literal notranslate"><span class="pre">assertIsIterable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisnumeric"><code class="docutils literal notranslate"><span class="pre">assertIsNumeric()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisobject"><code class="docutils literal notranslate"><span class="pre">assertIsObject()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisresource"><code class="docutils literal notranslate"><span class="pre">assertIsResource()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisscalar"><code class="docutils literal notranslate"><span class="pre">assertIsScalar()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisstring"><code class="docutils literal notranslate"><span class="pre">assertIsString()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertnull"><code class="docutils literal notranslate"><span class="pre">assertNull()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#strings">Strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertstringstartswith"><code class="docutils literal notranslate"><span class="pre">assertStringStartsWith()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertstringendswith"><code class="docutils literal notranslate"><span class="pre">assertStringEndsWith()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertstringcontainsstring"><code class="docutils literal notranslate"><span class="pre">assertStringContainsString()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertstringcontainsstringignoringcase"><code class="docutils literal notranslate"><span class="pre">assertStringContainsStringIgnoringCase()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertstringequalsstringignoringlineendings"><code class="docutils literal notranslate"><span class="pre">assertStringEqualsStringIgnoringLineEndings()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertmatchesregularexpression"><code class="docutils literal notranslate"><span class="pre">assertMatchesRegularExpression()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertstringmatchesformat"><code class="docutils literal notranslate"><span class="pre">assertStringMatchesFormat()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertstringmatchesformatfile"><code class="docutils literal notranslate"><span class="pre">assertStringMatchesFormatFile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertfilematchesformat"><code class="docutils literal notranslate"><span class="pre">assertFileMatchesFormat()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertfilematchesformatfile"><code class="docutils literal notranslate"><span class="pre">assertFileMatchesFormatFile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertstringequalsfile"><code class="docutils literal notranslate"><span class="pre">assertStringEqualsFile()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#json">JSON</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertjson"><code class="docutils literal notranslate"><span class="pre">assertJson()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertjsonfileequalsjsonfile"><code class="docutils literal notranslate"><span class="pre">assertJsonFileEqualsJsonFile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertjsonstringequalsjsonfile"><code class="docutils literal notranslate"><span class="pre">assertJsonStringEqualsJsonFile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertjsonstringequalsjsonstring"><code class="docutils literal notranslate"><span class="pre">assertJsonStringEqualsJsonString()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#xml">XML</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertxmlfileequalsxmlfile"><code class="docutils literal notranslate"><span class="pre">assertXmlFileEqualsXmlFile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertxmlstringequalsxmlfile"><code class="docutils literal notranslate"><span class="pre">assertXmlStringEqualsXmlFile()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertxmlstringequalsxmlstring"><code class="docutils literal notranslate"><span class="pre">assertXmlStringEqualsXmlString()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#filesystem">Filesystem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertdirectoryexists"><code class="docutils literal notranslate"><span class="pre">assertDirectoryExists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertdirectoryisreadable"><code class="docutils literal notranslate"><span class="pre">assertDirectoryIsReadable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertdirectoryiswritable"><code class="docutils literal notranslate"><span class="pre">assertDirectoryIsWritable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertfileexists"><code class="docutils literal notranslate"><span class="pre">assertFileExists()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertfileisreadable"><code class="docutils literal notranslate"><span class="pre">assertFileIsReadable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertfileiswritable"><code class="docutils literal notranslate"><span class="pre">assertFileIsWritable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertisreadable"><code class="docutils literal notranslate"><span class="pre">assertIsReadable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertiswritable"><code class="docutils literal notranslate"><span class="pre">assertIsWritable()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#math">Math</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertinfinite"><code class="docutils literal notranslate"><span class="pre">assertInfinite()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertnan"><code class="docutils literal notranslate"><span class="pre">assertNan()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="assertions.html#constraints">Constraints</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html#assertthat"><code class="docutils literal notranslate"><span class="pre">assertThat()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Attributes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#test"><code class="docutils literal notranslate"><span class="pre">Test</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testdox"><code class="docutils literal notranslate"><span class="pre">TestDox</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#disablereturnvaluegenerationfortestdoubles"><code class="docutils literal notranslate"><span class="pre">DisableReturnValueGenerationForTestDoubles</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#doesnotperformassertions"><code class="docutils literal notranslate"><span class="pre">DoesNotPerformAssertions</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ignoredeprecations"><code class="docutils literal notranslate"><span class="pre">IgnoreDeprecations</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#withouterrorhandler"><code class="docutils literal notranslate"><span class="pre">WithoutErrorHandler</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-coverage">Code Coverage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#coversclass"><code class="docutils literal notranslate"><span class="pre">CoversClass</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coverstrait"><code class="docutils literal notranslate"><span class="pre">CoversTrait</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coversmethod"><code class="docutils literal notranslate"><span class="pre">CoversMethod</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coversfunction"><code class="docutils literal notranslate"><span class="pre">CoversFunction</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coversnothing"><code class="docutils literal notranslate"><span class="pre">CoversNothing</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usesclass"><code class="docutils literal notranslate"><span class="pre">UsesClass</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usestrait"><code class="docutils literal notranslate"><span class="pre">UsesTrait</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usesmethod"><code class="docutils literal notranslate"><span class="pre">UsesMethod</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usesfunction"><code class="docutils literal notranslate"><span class="pre">UsesFunction</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#data-provider">Data Provider</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dataprovider"><code class="docutils literal notranslate"><span class="pre">DataProvider</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dataproviderexternal"><code class="docutils literal notranslate"><span class="pre">DataProviderExternal</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testwith"><code class="docutils literal notranslate"><span class="pre">TestWith</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testwithjson"><code class="docutils literal notranslate"><span class="pre">TestWithJson</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#test-dependencies">Test Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#depends"><code class="docutils literal notranslate"><span class="pre">Depends</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dependsusingdeepclone"><code class="docutils literal notranslate"><span class="pre">DependsUsingDeepClone</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dependsusingshallowclone"><code class="docutils literal notranslate"><span class="pre">DependsUsingShallowClone</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dependsexternal"><code class="docutils literal notranslate"><span class="pre">DependsExternal</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dependsexternalusingdeepclone"><code class="docutils literal notranslate"><span class="pre">DependsExternalUsingDeepClone</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dependsexternalusingshallowclone"><code class="docutils literal notranslate"><span class="pre">DependsExternalUsingShallowClone</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dependsonclass"><code class="docutils literal notranslate"><span class="pre">DependsOnClass</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dependsonclassusingdeepclone"><code class="docutils literal notranslate"><span class="pre">DependsOnClassUsingDeepClone</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dependsonclassusingshallowclone"><code class="docutils literal notranslate"><span class="pre">DependsOnClassUsingShallowClone</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#test-groups">Test Groups</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#group"><code class="docutils literal notranslate"><span class="pre">Group</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#small"><code class="docutils literal notranslate"><span class="pre">Small</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#medium"><code class="docutils literal notranslate"><span class="pre">Medium</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#large"><code class="docutils literal notranslate"><span class="pre">Large</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ticket"><code class="docutils literal notranslate"><span class="pre">Ticket</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#template-methods">Template Methods</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#beforeclass"><code class="docutils literal notranslate"><span class="pre">BeforeClass</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#before"><code class="docutils literal notranslate"><span class="pre">Before</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#precondition"><code class="docutils literal notranslate"><span class="pre">PreCondition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#postcondition"><code class="docutils literal notranslate"><span class="pre">PostCondition</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#after"><code class="docutils literal notranslate"><span class="pre">After</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#afterclass"><code class="docutils literal notranslate"><span class="pre">AfterClass</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#test-isolation">Test Isolation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#backupglobals"><code class="docutils literal notranslate"><span class="pre">BackupGlobals</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#excludeglobalvariablefrombackup"><code class="docutils literal notranslate"><span class="pre">ExcludeGlobalVariableFromBackup</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#backupstaticproperties"><code class="docutils literal notranslate"><span class="pre">BackupStaticProperties</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#excludestaticpropertyfrombackup"><code class="docutils literal notranslate"><span class="pre">ExcludeStaticPropertyFromBackup</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#runinseparateprocess"><code class="docutils literal notranslate"><span class="pre">RunInSeparateProcess</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#runtestsinseparateprocesses"><code class="docutils literal notranslate"><span class="pre">RunTestsInSeparateProcesses</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#runclassinseparateprocess"><code class="docutils literal notranslate"><span class="pre">RunClassInSeparateProcess</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preserveglobalstate"><code class="docutils literal notranslate"><span class="pre">PreserveGlobalState</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#skipping-tests">Skipping Tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requiresphp"><code class="docutils literal notranslate"><span class="pre">RequiresPhp</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requiresphpextension"><code class="docutils literal notranslate"><span class="pre">RequiresPhpExtension</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requiressetting"><code class="docutils literal notranslate"><span class="pre">RequiresSetting</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requiresphpunit"><code class="docutils literal notranslate"><span class="pre">RequiresPhpunit</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requiresphpunitextension"><code class="docutils literal notranslate"><span class="pre">RequiresPhpunitExtension</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requiresfunction"><code class="docutils literal notranslate"><span class="pre">RequiresFunction</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requiresmethod"><code class="docutils literal notranslate"><span class="pre">RequiresMethod</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requiresoperatingsystem"><code class="docutils literal notranslate"><span class="pre">RequiresOperatingSystem</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requiresoperatingsystemfamily"><code class="docutils literal notranslate"><span class="pre">RequiresOperatingSystemFamily</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="annotations.html">3. Annotations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#author">&#64;author</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#after">&#64;after</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#afterclass">&#64;afterClass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#backupglobals">&#64;backupGlobals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#backupstaticattributes">&#64;backupStaticAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#before">&#64;before</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#beforeclass">&#64;beforeClass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#codecoverageignore">&#64;codeCoverageIgnore*</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#covers">&#64;covers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#coversdefaultclass">&#64;coversDefaultClass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#coversnothing">&#64;coversNothing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#dataprovider">&#64;dataProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#depends">&#64;depends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#doesnotperformassertions">&#64;doesNotPerformAssertions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#group">&#64;group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#large">&#64;large</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#medium">&#64;medium</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#preserveglobalstate">&#64;preserveGlobalState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#requires">&#64;requires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#runtestsinseparateprocesses">&#64;runTestsInSeparateProcesses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#runinseparateprocess">&#64;runInSeparateProcess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#small">&#64;small</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#test">&#64;test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#testdox">&#64;testdox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#testwith">&#64;testWith</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#ticket">&#64;ticket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annotations.html#uses">&#64;uses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">4. Events</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="events.html#application">Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#testrunner">TestRunner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#testsuite">TestSuite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#test">Test</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">5. The XML Configuration File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#the-phpunit-element">The <code class="docutils literal notranslate"><span class="pre">&lt;phpunit&gt;</span></code> Element</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-backupglobals-attribute">The <code class="docutils literal notranslate"><span class="pre">backupGlobals</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-backupstaticproperties-attribute">The <code class="docutils literal notranslate"><span class="pre">backupStaticProperties</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-bootstrap-attribute">The <code class="docutils literal notranslate"><span class="pre">bootstrap</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-cachedirectory-attribute">The <code class="docutils literal notranslate"><span class="pre">cacheDirectory</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-cacheresult-attribute">The <code class="docutils literal notranslate"><span class="pre">cacheResult</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-colors-attribute">The <code class="docutils literal notranslate"><span class="pre">colors</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-columns-attribute">The <code class="docutils literal notranslate"><span class="pre">columns</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-controlgarbagecollector-attribute">The <code class="docutils literal notranslate"><span class="pre">controlGarbageCollector</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-numberoftestsbeforegarbagecollection-attribute">The <code class="docutils literal notranslate"><span class="pre">numberOfTestsBeforeGarbageCollection</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-requirecoveragemetadata-attribute">The <code class="docutils literal notranslate"><span class="pre">requireCoverageMetadata</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-processisolation-attribute">The <code class="docutils literal notranslate"><span class="pre">processIsolation</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stopondefect-attribute">The <code class="docutils literal notranslate"><span class="pre">stopOnDefect</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stoponerror-attribute">The <code class="docutils literal notranslate"><span class="pre">stopOnError</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stoponfailure-attribute">The <code class="docutils literal notranslate"><span class="pre">stopOnFailure</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stoponwarning-attribute">The <code class="docutils literal notranslate"><span class="pre">stopOnWarning</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stoponrisky-attribute">The <code class="docutils literal notranslate"><span class="pre">stopOnRisky</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stopondeprecation-attribute">The <code class="docutils literal notranslate"><span class="pre">stopOnDeprecation</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stoponnotice-attribute">The <code class="docutils literal notranslate"><span class="pre">stopOnNotice</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stoponskipped-attribute">The <code class="docutils literal notranslate"><span class="pre">stopOnSkipped</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stoponincomplete-attribute">The <code class="docutils literal notranslate"><span class="pre">stopOnIncomplete</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-failonallissues-attribute">The <code class="docutils literal notranslate"><span class="pre">failOnAllIssues</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-failonemptytestsuite-attribute">The <code class="docutils literal notranslate"><span class="pre">failOnEmptyTestSuite</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-failonwarning-attribute">The <code class="docutils literal notranslate"><span class="pre">failOnWarning</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-failonrisky-attribute">The <code class="docutils literal notranslate"><span class="pre">failOnRisky</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-failondeprecation-attribute">The <code class="docutils literal notranslate"><span class="pre">failOnDeprecation</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-failonphpunitdeprecation-attribute">The <code class="docutils literal notranslate"><span class="pre">failOnPhpunitDeprecation</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-failonnotice-attribute">The <code class="docutils literal notranslate"><span class="pre">failOnNotice</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-failonskipped-attribute">The <code class="docutils literal notranslate"><span class="pre">failOnSkipped</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-failonincomplete-attribute">The <code class="docutils literal notranslate"><span class="pre">failOnIncomplete</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-bestrictaboutchangestoglobalstate-attribute">The <code class="docutils literal notranslate"><span class="pre">beStrictAboutChangesToGlobalState</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-bestrictaboutoutputduringtests-attribute">The <code class="docutils literal notranslate"><span class="pre">beStrictAboutOutputDuringTests</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-bestrictaboutteststhatdonottestanything-attribute">The <code class="docutils literal notranslate"><span class="pre">beStrictAboutTestsThatDoNotTestAnything</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-bestrictaboutcoveragemetadata-attribute">The <code class="docutils literal notranslate"><span class="pre">beStrictAboutCoverageMetadata</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-enforcetimelimit-attribute">The <code class="docutils literal notranslate"><span class="pre">enforceTimeLimit</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-defaulttimelimit-attribute">The <code class="docutils literal notranslate"><span class="pre">defaultTimeLimit</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-timeoutforsmalltests-attribute">The <code class="docutils literal notranslate"><span class="pre">timeoutForSmallTests</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-timeoutformediumtests-attribute">The <code class="docutils literal notranslate"><span class="pre">timeoutForMediumTests</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-timeoutforlargetests-attribute">The <code class="docutils literal notranslate"><span class="pre">timeoutForLargeTests</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-defaulttestsuite-attribute">The <code class="docutils literal notranslate"><span class="pre">defaultTestSuite</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-stderr-attribute">The <code class="docutils literal notranslate"><span class="pre">stderr</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-reversedefectlist-attribute">The <code class="docutils literal notranslate"><span class="pre">reverseDefectList</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-registermockobjectsfromtestargumentsrecursively-attribute">The <code class="docutils literal notranslate"><span class="pre">registerMockObjectsFromTestArgumentsRecursively</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-extensionsdirectory-attribute">The <code class="docutils literal notranslate"><span class="pre">extensionsDirectory</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-executionorder-attribute">The <code class="docutils literal notranslate"><span class="pre">executionOrder</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-resolvedependencies-attribute">The <code class="docutils literal notranslate"><span class="pre">resolveDependencies</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-testdox-attribute">The <code class="docutils literal notranslate"><span class="pre">testdox</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-testdoxsummary-attribute">The <code class="docutils literal notranslate"><span class="pre">testdoxSummary</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-displaydetailsonallissues-attribute">The <code class="docutils literal notranslate"><span class="pre">displayDetailsOnAllIssues</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-displaydetailsonincompletetests-attribute">The <code class="docutils literal notranslate"><span class="pre">displayDetailsOnIncompleteTests</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-displaydetailsonskippedtests-attribute">The <code class="docutils literal notranslate"><span class="pre">displayDetailsOnSkippedTests</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-displaydetailsonteststhattriggerdeprecations-attribute">The <code class="docutils literal notranslate"><span class="pre">displayDetailsOnTestsThatTriggerDeprecations</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-displaydetailsonphpunitdeprecations-attribute">The <code class="docutils literal notranslate"><span class="pre">displayDetailsOnPhpunitDeprecations</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-displaydetailsonteststhattriggererrors-attribute">The <code class="docutils literal notranslate"><span class="pre">displayDetailsOnTestsThatTriggerErrors</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-displaydetailsonteststhattriggernotices-attribute">The <code class="docutils literal notranslate"><span class="pre">displayDetailsOnTestsThatTriggerNotices</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-displaydetailsonteststhattriggerwarnings-attribute">The <code class="docutils literal notranslate"><span class="pre">displayDetailsOnTestsThatTriggerWarnings</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-shortenarraysforexportthreshold-attribute">The <code class="docutils literal notranslate"><span class="pre">shortenArraysForExportThreshold</span></code> Attribute</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#the-testsuites-element">The <code class="docutils literal notranslate"><span class="pre">&lt;testsuites&gt;</span></code> Element</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-testsuite-element">The <code class="docutils literal notranslate"><span class="pre">&lt;testsuite&gt;</span></code> Element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-phpversion-and-phpversionoperator-attributes">The <code class="docutils literal notranslate"><span class="pre">phpVersion</span></code> and <code class="docutils literal notranslate"><span class="pre">phpVersionOperator</span></code> Attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-groups-attribute">The <code class="docutils literal notranslate"><span class="pre">groups</span></code> Attribute</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#the-source-element">The <code class="docutils literal notranslate"><span class="pre">&lt;source&gt;</span></code> Element</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-include-element">The <code class="docutils literal notranslate"><span class="pre">&lt;include&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-exclude-element">The <code class="docutils literal notranslate"><span class="pre">&lt;exclude&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-directory-element">The <code class="docutils literal notranslate"><span class="pre">&lt;directory&gt;</span></code> Element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-prefix-attribute">The <code class="docutils literal notranslate"><span class="pre">prefix</span></code> Attribute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-suffix-attribute">The <code class="docutils literal notranslate"><span class="pre">suffix</span></code> Attribute</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-file-element">The <code class="docutils literal notranslate"><span class="pre">&lt;file&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-deprecationtrigger-element">The <code class="docutils literal notranslate"><span class="pre">&lt;deprecationTrigger&gt;</span></code> Element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-function-element">The <code class="docutils literal notranslate"><span class="pre">&lt;function&gt;</span></code> Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-method-element">The <code class="docutils literal notranslate"><span class="pre">&lt;method&gt;</span></code> Element</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoreselfdeprecations-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreSelfDeprecations&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoredirectdeprecations-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreDirectDeprecations&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoreindirectdeprecations-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreIndirectDeprecations&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-restrictdeprecations-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;restrictDeprecations&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-restrictnotices-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;restrictNotices&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-restrictwarnings-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;restrictWarnings&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-baseline-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;baseline&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoresuppressionofdeprecations-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreSuppressionOfDeprecations&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoresuppressionofphpdeprecations-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreSuppressionOfPhpDeprecations&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoresuppressionoferrors-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreSuppressionOfErrors&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoresuppressionofnotices-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreSuppressionOfNotices&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoresuppressionofphpnotices-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreSuppressionOfPhpNotices&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoresuppressionofwarnings-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreSuppressionOfWarnings&gt;</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoresuppressionofphpwarnings-attribute">The <code class="docutils literal notranslate"><span class="pre">&lt;ignoreSuppressionOfPhpWarnings&gt;</span></code> Attribute</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#the-coverage-element">The <code class="docutils literal notranslate"><span class="pre">&lt;coverage&gt;</span></code> Element</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-includeuncoveredfiles-attribute">The <code class="docutils literal notranslate"><span class="pre">includeUncoveredFiles</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ignoredeprecatedcodeunits-attribute">The <code class="docutils literal notranslate"><span class="pre">ignoreDeprecatedCodeUnits</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-pathcoverage-attribute">The <code class="docutils literal notranslate"><span class="pre">pathCoverage</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-disablecodecoverageignore-attribute">The <code class="docutils literal notranslate"><span class="pre">disableCodeCoverageIgnore</span></code> Attribute</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-report-element">The <code class="docutils literal notranslate"><span class="pre">&lt;report&gt;</span></code> Element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-clover-element">The <code class="docutils literal notranslate"><span class="pre">&lt;clover&gt;</span></code> Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-cobertura-element">The <code class="docutils literal notranslate"><span class="pre">&lt;cobertura&gt;</span></code> Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-crap4j-element">The <code class="docutils literal notranslate"><span class="pre">&lt;crap4j&gt;</span></code> Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-html-element">The <code class="docutils literal notranslate"><span class="pre">&lt;html&gt;</span></code> Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-php-element">The <code class="docutils literal notranslate"><span class="pre">&lt;php&gt;</span></code> Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-text-element">The <code class="docutils literal notranslate"><span class="pre">&lt;text&gt;</span></code> Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-xml-element">The <code class="docutils literal notranslate"><span class="pre">&lt;xml&gt;</span></code> Element</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#the-logging-element">The <code class="docutils literal notranslate"><span class="pre">&lt;logging&gt;</span></code> Element</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-junit-element">The <code class="docutils literal notranslate"><span class="pre">&lt;junit&gt;</span></code> Element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#id15">The <code class="docutils literal notranslate"><span class="pre">outputFile</span></code> Attribute</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-teamcity-element">The <code class="docutils literal notranslate"><span class="pre">&lt;teamcity&gt;</span></code> Element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#id16">The <code class="docutils literal notranslate"><span class="pre">outputFile</span></code> Attribute</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-testdoxhtml-element">The <code class="docutils literal notranslate"><span class="pre">&lt;testdoxHtml&gt;</span></code> Element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#id17">The <code class="docutils literal notranslate"><span class="pre">outputFile</span></code> Attribute</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-testdoxtext-element">The <code class="docutils literal notranslate"><span class="pre">&lt;testdoxText&gt;</span></code> Element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#id18">The <code class="docutils literal notranslate"><span class="pre">outputFile</span></code> Attribute</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#the-groups-element">The <code class="docutils literal notranslate"><span class="pre">&lt;groups&gt;</span></code> Element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#the-extensions-element">The <code class="docutils literal notranslate"><span class="pre">&lt;extensions&gt;</span></code> Element</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-bootstrap-element">The <code class="docutils literal notranslate"><span class="pre">&lt;bootstrap&gt;</span></code> Element</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration.html#the-parameter-element">The <code class="docutils literal notranslate"><span class="pre">&lt;parameter&gt;</span></code> Element</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#appendixes-configuration-php">The <code class="docutils literal notranslate"><span class="pre">&lt;php&gt;</span></code> Element</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-includepath-element">The <code class="docutils literal notranslate"><span class="pre">&lt;includePath&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-ini-element">The <code class="docutils literal notranslate"><span class="pre">&lt;ini&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-const-element">The <code class="docutils literal notranslate"><span class="pre">&lt;const&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-var-element">The <code class="docutils literal notranslate"><span class="pre">&lt;var&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-env-element">The <code class="docutils literal notranslate"><span class="pre">&lt;env&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-get-element">The <code class="docutils literal notranslate"><span class="pre">&lt;get&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-post-element">The <code class="docutils literal notranslate"><span class="pre">&lt;post&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-cookie-element">The <code class="docutils literal notranslate"><span class="pre">&lt;cookie&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-server-element">The <code class="docutils literal notranslate"><span class="pre">&lt;server&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-files-element">The <code class="docutils literal notranslate"><span class="pre">&lt;files&gt;</span></code> Element</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#the-request-element">The <code class="docutils literal notranslate"><span class="pre">&lt;request&gt;</span></code> Element</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="copyright.html">6. Copyright</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PHPUnit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2. </span>Attributes</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/sebastianbergmann/phpunit-documentation-english/blob/unknown/src/attributes.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="attributes">
+<span id="appendixes-attributes"></span><h1><span class="section-number">2. </span>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h1>
+<p>Prior to PHPUnit 10, annotations in special PHP comments, so-called “DocBlocks” or “doc-comments”,
+were the only means of attaching metadata to code units. These annotations are documented in
+<a class="reference internal" href="annotations.html#appendixes-annotations"><span class="std std-ref">another appendix</span></a>.</p>
+<p>PHP 8 introduced <a class="reference external" href="https://wiki.php.net/rfc/attributes_v2">attributes</a> as “a form of structured,
+syntactic metadata to declarations of classes, properties, functions, methods, parameters and
+constants. Attributes allow to define configuration directives directly embedded with the
+declaration of that code.”</p>
+<p>PHPUnit will first look for metadata in attributes before it looks for annotations in comments.
+When metadata is found in attributes, metadata in comments is ignored.</p>
+<p>The attributes supported by PHPUnit are all declared in the <code class="docutils literal notranslate"><span class="pre">PHPUnit\Framework\Attributes</span></code>
+namespace. They are documented in this appendix.</p>
+<section id="test">
+<span id="appendixes-attributes-test"></span><h2><code class="docutils literal notranslate"><span class="pre">Test</span></code><a class="headerlink" href="#test" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>As an alternative to prefixing your test method names with <code class="docutils literal notranslate"><span class="pre">test</span></code>,
+you can use the <code class="docutils literal notranslate"><span class="pre">Test</span></code> attribute to mark it as a test method.</p>
+<div class="literal-block-wrapper docutils container" id="appendixes-attributes-test-examples-exampletest-php">
+<div class="code-block-caption"><span class="caption-number">Example 2.16 </span><span class="caption-text">Using the <code class="docutils literal notranslate"><span class="pre">Test</span></code> attribute</span><a class="headerlink" href="#appendixes-attributes-test-examples-exampletest-php" title="Link to this code"></a></div>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">use</span> <span class="nx">PHPUnit\Framework\Attributes\Test</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">PHPUnit\Framework\TestCase</span><span class="p">;</span>
+
+<span class="k">final</span> <span class="k">class</span> <span class="nc">ExampleTest</span> <span class="k">extends</span> <span class="nx">TestCase</span>
+<span class="p">{</span>
+    <span class="p">#[</span><span class="nd">Test</span><span class="p">]</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">it_does_something</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="testdox">
+<span id="appendixes-attributes-testdox"></span><h2><code class="docutils literal notranslate"><span class="pre">TestDox</span></code><a class="headerlink" href="#testdox" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">TestDox(string</span> <span class="pre">$text)</span></code> attribute can be used to customize the text that is printed for
+a test when TestDox output is enabled.</p>
+<div class="literal-block-wrapper docutils container" id="appendixes-attributes-testdox-examples-exampletest-php">
+<div class="code-block-caption"><span class="caption-number">Example 2.17 </span><span class="caption-text">Using the <code class="docutils literal notranslate"><span class="pre">TestDox</span></code> attribute</span><a class="headerlink" href="#appendixes-attributes-testdox-examples-exampletest-php" title="Link to this code"></a></div>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">use</span> <span class="nx">PHPUnit\Framework\Attributes\TestDox</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">PHPUnit\Framework\TestCase</span><span class="p">;</span>
+
+<span class="k">final</span> <span class="k">class</span> <span class="nc">ExampleTest</span> <span class="k">extends</span> <span class="nx">TestCase</span>
+<span class="p">{</span>
+    <span class="p">#[</span><span class="nd">TestDox</span><span class="p">(</span><span class="s1">&#39;It does something&#39;</span><span class="p">)]</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">testOne</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Running the test shown above with TestDox output enabled yields the output shown below:</p>
+<pre class="literal-block">$ ./tools/phpunit --no-progress --testdox tests/ExampleTest.php
+PHPUnit unknown.0 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.2.2
+
+Time: 00:00.057, Memory: 6.00 MB
+
+Example
+ ✔ It does something
+
+OK (1 test, 1 assertion)</pre>
+<p>When you use the <code class="docutils literal notranslate"><span class="pre">TestDox</span></code> attribute for a test method that uses a
+<a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-data-providers"><span class="std std-ref">data provider</span></a> then you
+may use the method parameters as placeholders in your alternative description.</p>
+<div class="literal-block-wrapper docutils container" id="appendixes-attributes-testdox-examples-exampletest2-php">
+<div class="code-block-caption"><span class="caption-number">Example 2.18 </span><span class="caption-text">Using the <code class="docutils literal notranslate"><span class="pre">TestDox</span></code> attribute together with data providers</span><a class="headerlink" href="#appendixes-attributes-testdox-examples-exampletest2-php" title="Link to this code"></a></div>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">use</span> <span class="nx">PHPUnit\Framework\Attributes\DataProvider</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">PHPUnit\Framework\Attributes\TestDox</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">PHPUnit\Framework\TestCase</span><span class="p">;</span>
+
+<span class="k">final</span> <span class="k">class</span> <span class="nc">ExampleTest</span> <span class="k">extends</span> <span class="nx">TestCase</span>
+<span class="p">{</span>
+    <span class="p">#[</span><span class="nd">DataProvider</span><span class="p">(</span><span class="s1">&#39;additionProvider&#39;</span><span class="p">)]</span>
+    <span class="p">#[</span><span class="nd">TestDox</span><span class="p">(</span><span class="s1">&#39;Adding $a to $b results in $expected&#39;</span><span class="p">)]</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">testAdd</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$expected</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span><span class="nv">$expected</span><span class="p">,</span> <span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">additionProvider</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="s1">&#39;data set 1&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+            <span class="s1">&#39;data set 2&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+            <span class="s1">&#39;data set 3&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+            <span class="s1">&#39;data set 4&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Running the test shown above with TestDox output enabled yields the output shown below:</p>
+<pre class="literal-block">$ ./tools/phpunit --no-progress --testdox tests/ExampleTest.php
+PHPUnit unknown.0 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.2.2
+
+Time: 00:00.116, Memory: 8.00 MB
+
+Example
+ ✔ Adding 0 to 0 results in 0
+ ✔ Adding 1 to 0 results in 1
+ ✔ Adding 0 to 1 results in 1
+ ✘ Adding 1 to 1 results in 3
+   │
+   │ Failed asserting that 2 is identical to 3.
+   │
+   │ /path/to/ExampleTest.php:12
+   │
+
+FAILURES!
+Tests: 4, Assertions: 4, Failures: 1.</pre>
+<p>Additionally, <code class="docutils literal notranslate"><span class="pre">$_dataName</span></code> is available and holds the name of the current data.
+That would be <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">set</span> <span class="pre">1</span></code> through <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">set</span> <span class="pre">4</span></code> in the example shown above.</p>
+</section>
+<section id="disablereturnvaluegenerationfortestdoubles">
+<span id="appendixes-attributes-disablereturnvaluegenerationfortestdoubles"></span><h2><code class="docutils literal notranslate"><span class="pre">DisableReturnValueGenerationForTestDoubles</span></code><a class="headerlink" href="#disablereturnvaluegenerationfortestdoubles" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">DisableReturnValueGenerationForTestDoubles</span></code> attribute can be used to disable the return value generation
+for test doubles created using <code class="docutils literal notranslate"><span class="pre">createMock()</span></code>, <code class="docutils literal notranslate"><span class="pre">createMockForIntersectionOfInterfaces()</span></code>, <code class="docutils literal notranslate"><span class="pre">createPartialMock()</span></code>,
+<code class="docutils literal notranslate"><span class="pre">createStub()</span></code>, and <code class="docutils literal notranslate"><span class="pre">createStubForIntersectionOfInterfaces()</span></code> for all tests of a test case class.</p>
+</section>
+<section id="doesnotperformassertions">
+<span id="appendixes-attributes-doesnotperformassertions"></span><h2><code class="docutils literal notranslate"><span class="pre">DoesNotPerformAssertions</span></code><a class="headerlink" href="#doesnotperformassertions" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>By default, PHPUnit considers a test that does not perform assertions and does not configure
+expectations on mock objects as <a class="reference internal" href="risky-tests.html#risky-tests-useless-tests"><span class="std std-ref">risky</span></a>. The
+<code class="docutils literal notranslate"><span class="pre">DoesNotPerformAssertions</span></code> attribute can be used to prevent this.</p>
+</section>
+<section id="ignoredeprecations">
+<span id="appendixes-attributes-ignoredeprecations"></span><h2><code class="docutils literal notranslate"><span class="pre">IgnoreDeprecations</span></code><a class="headerlink" href="#ignoredeprecations" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">IgnoreDeprecations</span></code> attribute can be used to configure PHPUnit’s error handler to
+not emit events for <code class="docutils literal notranslate"><span class="pre">E_DEPRECATED</span></code> and <code class="docutils literal notranslate"><span class="pre">E_USER_DEPRECATED</span></code> errors.</p>
+</section>
+<section id="withouterrorhandler">
+<span id="appendixes-attributes-withouterrorhandler"></span><h2><code class="docutils literal notranslate"><span class="pre">WithoutErrorHandler</span></code><a class="headerlink" href="#withouterrorhandler" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">WithoutErrorHandler</span></code> attribute can be used to disable PHPUnit’s error handler for
+a test method.</p>
+<div class="admonition-warning admonition">
+<p class="admonition-title">Warning</p>
+<p>Features of PHPUnit that rely on PHPUnit’s error handler to be active while a test method
+is executed will not work when PHPUnit’s error handler is disabled. No <code class="docutils literal notranslate"><span class="pre">E_(USER_)*</span></code> errors
+triggered by PHP will be processed by PHPUnit when its error handler is disabled.</p>
+<p>You should only disable PHPUnit’s error handler when it interferes with the code you are testing,
+for instance when it uses <code class="docutils literal notranslate"><span class="pre">error_get_last()</span></code> to react to <code class="docutils literal notranslate"><span class="pre">E_(USER_)*</span></code> errors triggered by PHP.</p>
+</div>
+</section>
+<section id="code-coverage">
+<h2>Code Coverage<a class="headerlink" href="#code-coverage" title="Link to this heading"></a></h2>
+<section id="coversclass">
+<span id="appendixes-attributes-coversclass"></span><h3><code class="docutils literal notranslate"><span class="pre">CoversClass</span></code><a class="headerlink" href="#coversclass" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">CoversClass(string</span> <span class="pre">$className)</span></code> attribute can be used to <a class="reference internal" href="code-coverage.html#code-coverage-targeting-units-of-code"><span class="std std-ref">specify</span></a>
+that a test intends to cover the given class.</p>
+</section>
+<section id="coverstrait">
+<span id="appendixes-attributes-coverstrait"></span><h3><code class="docutils literal notranslate"><span class="pre">CoversTrait</span></code><a class="headerlink" href="#coverstrait" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">CoversTrait(string</span> <span class="pre">$traitName)</span></code> attribute can be used to <a class="reference internal" href="code-coverage.html#code-coverage-targeting-units-of-code"><span class="std std-ref">specify</span></a>
+that a test intends to cover the given trait.</p>
+</section>
+<section id="coversmethod">
+<span id="appendixes-attributes-coversmethod"></span><h3><code class="docutils literal notranslate"><span class="pre">CoversMethod</span></code><a class="headerlink" href="#coversmethod" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">CoversMethod(string</span> <span class="pre">$className,</span> <span class="pre">string</span> <span class="pre">$methodName)</span></code> attribute can be used to <a class="reference internal" href="code-coverage.html#code-coverage-targeting-units-of-code"><span class="std std-ref">specify</span></a>
+that a test intends to cover the given method.</p>
+</section>
+<section id="coversfunction">
+<span id="appendixes-attributes-coversfunction"></span><h3><code class="docutils literal notranslate"><span class="pre">CoversFunction</span></code><a class="headerlink" href="#coversfunction" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">CoversFunction(string</span> <span class="pre">$functionName)</span></code> attribute can be used to <a class="reference internal" href="code-coverage.html#code-coverage-targeting-units-of-code"><span class="std std-ref">specify</span></a>
+that a test intends to cover the given function.</p>
+</section>
+<section id="coversnothing">
+<span id="appendixes-attributes-coversnothing"></span><h3><code class="docutils literal notranslate"><span class="pre">CoversNothing</span></code><a class="headerlink" href="#coversnothing" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">CoversNothing()</span></code> attribute can be used to <a class="reference internal" href="code-coverage.html#code-coverage-targeting-units-of-code"><span class="std std-ref">specify</span></a>
+that a test does not intend to contribute to code coverage.</p>
+</section>
+<section id="usesclass">
+<span id="appendixes-attributes-usesclass"></span><h3><code class="docutils literal notranslate"><span class="pre">UsesClass</span></code><a class="headerlink" href="#usesclass" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">UsesClass(string</span> <span class="pre">$className)</span></code> attribute can be used to <a class="reference internal" href="code-coverage.html#code-coverage-targeting-units-of-code"><span class="std std-ref">specify</span></a>
+that a test allows the execution of code in the given class, but does not intend to cover it. This is relevant
+in the context of <a class="reference internal" href="risky-tests.html#risky-tests-unintentionally-covered-code"><span class="std std-ref">preventing unintentionally covered code</span></a>.</p>
+</section>
+<section id="usestrait">
+<span id="appendixes-attributes-usestrait"></span><h3><code class="docutils literal notranslate"><span class="pre">UsesTrait</span></code><a class="headerlink" href="#usestrait" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">UsesTrait(string</span> <span class="pre">$traitName)</span></code> attribute can be used to <a class="reference internal" href="code-coverage.html#code-coverage-targeting-units-of-code"><span class="std std-ref">specify</span></a>
+that a test allows the execution of code in the given trait, but does not intend to cover it. This is relevant
+in the context of <a class="reference internal" href="risky-tests.html#risky-tests-unintentionally-covered-code"><span class="std std-ref">preventing unintentionally covered code</span></a>.</p>
+</section>
+<section id="usesmethod">
+<span id="appendixes-attributes-usesmethod"></span><h3><code class="docutils literal notranslate"><span class="pre">UsesMethod</span></code><a class="headerlink" href="#usesmethod" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">UsesMethod(string</span> <span class="pre">$className)</span></code> attribute can be used to <a class="reference internal" href="code-coverage.html#code-coverage-targeting-units-of-code"><span class="std std-ref">specify</span></a>
+that a test allows the execution of code in the given method, but does not intend to cover it. This is relevant
+in the context of <a class="reference internal" href="risky-tests.html#risky-tests-unintentionally-covered-code"><span class="std std-ref">preventing unintentionally covered code</span></a>.</p>
+</section>
+<section id="usesfunction">
+<span id="appendixes-attributes-usesfunction"></span><h3><code class="docutils literal notranslate"><span class="pre">UsesFunction</span></code><a class="headerlink" href="#usesfunction" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">UsesFunction(string</span> <span class="pre">$functionName)</span></code> attribute can be used to <a class="reference internal" href="code-coverage.html#code-coverage-targeting-units-of-code"><span class="std std-ref">specify</span></a>
+that a test allows the execution of code in the given global function, but does not intend to cover it. This is relevant
+in the context of <a class="reference internal" href="risky-tests.html#risky-tests-unintentionally-covered-code"><span class="std std-ref">preventing unintentionally covered code</span></a>.</p>
+</section>
+</section>
+<section id="data-provider">
+<h2>Data Provider<a class="headerlink" href="#data-provider" title="Link to this heading"></a></h2>
+<section id="dataprovider">
+<span id="appendixes-attributes-dataprovider"></span><h3><code class="docutils literal notranslate"><span class="pre">DataProvider</span></code><a class="headerlink" href="#dataprovider" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">DataProvider(string</span> <span class="pre">$methodName)</span></code> attribute can be used on a test method
+to specify a static method that is declared in the same class as the test method
+as a <a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-data-providers"><span class="std std-ref">data provider</span></a>.</p>
+</section>
+<section id="dataproviderexternal">
+<span id="appendixes-attributes-dataproviderexternal"></span><h3><code class="docutils literal notranslate"><span class="pre">DataProviderExternal</span></code><a class="headerlink" href="#dataproviderexternal" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">DataProviderExternal(string</span> <span class="pre">$className,</span> <span class="pre">string</span> <span class="pre">$methodName)</span></code> attribute can be used
+on a test method to specify a static method that is declared in another class as a
+<a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-data-providers"><span class="std std-ref">data provider</span></a>.</p>
+</section>
+<section id="testwith">
+<span id="appendixes-attributes-testwith"></span><h3><code class="docutils literal notranslate"><span class="pre">TestWith</span></code><a class="headerlink" href="#testwith" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">TestWith(array</span> <span class="pre">$data)</span></code> attribute can be used to define a
+<a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-data-providers"><span class="std std-ref">data provider</span></a> for a
+test method without having to implement a static data provider method.</p>
+<div class="literal-block-wrapper docutils container" id="appendixes-attributes-testwith-examples-exampletest-php">
+<div class="code-block-caption"><span class="caption-number">Example 2.19 </span><span class="caption-text">Using the <code class="docutils literal notranslate"><span class="pre">TestWith</span></code> attribute</span><a class="headerlink" href="#appendixes-attributes-testwith-examples-exampletest-php" title="Link to this code"></a></div>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">use</span> <span class="nx">PHPUnit\Framework\Attributes\TestWith</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">PHPUnit\Framework\TestCase</span><span class="p">;</span>
+
+<span class="k">final</span> <span class="k">class</span> <span class="nc">DataTest</span> <span class="k">extends</span> <span class="nx">TestCase</span>
+<span class="p">{</span>
+    <span class="p">#[</span><span class="nd">TestWith</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])]</span>
+    <span class="p">#[</span><span class="nd">TestWith</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])]</span>
+    <span class="p">#[</span><span class="nd">TestWith</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])]</span>
+    <span class="p">#[</span><span class="nd">TestWith</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])]</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">testAdd</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$expected</span><span class="p">)</span><span class="o">:</span> <span class="nd">void</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span><span class="nv">$expected</span><span class="p">,</span> <span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Running the test shown above yields the output shown below:</p>
+<pre class="literal-block">./tools/phpunit tests/DataTest.php
+PHPUnit unknown.0 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.2.2
+
+...F                                                                4 / 4 (100%)
+
+Time: 00:00.058, Memory: 8.00 MB
+
+There was 1 failure:
+
+1) DataTest::testAdd with data set #3
+Failed asserting that 2 is identical to 3.
+
+/path/to/DataTest.php:10
+
+FAILURES!
+Tests: 4, Assertions: 4, Failures: 1.</pre>
+</section>
+<section id="testwithjson">
+<span id="appendixes-attributes-testwithjson"></span><h3><code class="docutils literal notranslate"><span class="pre">TestWithJson</span></code><a class="headerlink" href="#testwithjson" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">TestWithJson(string</span> <span class="pre">$json)</span></code> attribute can be used to define a
+<a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-data-providers"><span class="std std-ref">data provider</span></a> for a
+test method without having to implement a static data provider method.</p>
+<div class="literal-block-wrapper docutils container" id="appendixes-attributes-testwithjson-examples-exampletest-php">
+<div class="code-block-caption"><span class="caption-number">Example 2.20 </span><span class="caption-text">Using the <code class="docutils literal notranslate"><span class="pre">TestWithJson</span></code> attribute</span><a class="headerlink" href="#appendixes-attributes-testwithjson-examples-exampletest-php" title="Link to this code"></a></div>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">declare</span><span class="p">(</span><span class="nx">strict_types</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">use</span> <span class="nx">PHPUnit\Framework\Attributes\TestWithJson</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">PHPUnit\Framework\TestCase</span><span class="p">;</span>
+
+<span class="k">final</span> <span class="k">class</span> <span class="nc">DataTest</span> <span class="k">extends</span> <span class="nx">TestCase</span>
+<span class="p">{</span>
+    <span class="p">#[</span><span class="nd">TestWithJson</span><span class="p">(</span><span class="s1">&#39;[0, 0, 0]&#39;</span><span class="p">)]</span>
+    <span class="p">#[</span><span class="nd">TestWithJson</span><span class="p">(</span><span class="s1">&#39;[0, 1, 1]&#39;</span><span class="p">)]</span>
+    <span class="p">#[</span><span class="nd">TestWithJson</span><span class="p">(</span><span class="s1">&#39;[1, 0, 1]&#39;</span><span class="p">)]</span>
+    <span class="p">#[</span><span class="nd">TestWithJson</span><span class="p">(</span><span class="s1">&#39;[1, 1, 3]&#39;</span><span class="p">)]</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">testAdd</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$a</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$b</span><span class="p">,</span> <span class="nx">int</span> <span class="nv">$expected</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span><span class="nv">$expected</span><span class="p">,</span> <span class="nv">$a</span> <span class="o">+</span> <span class="nv">$b</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>Running the test shown above yields the output shown below:</p>
+<pre class="literal-block">./tools/phpunit tests/DataTest.php
+PHPUnit unknown.0 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.2.2
+
+...F                                                                4 / 4 (100%)
+
+Time: 00:00.058, Memory: 8.00 MB
+
+There was 1 failure:
+
+1) DataTest::testAdd with data set #3
+Failed asserting that 2 is identical to 3.
+
+/path/to/DataTest.php:10
+
+FAILURES!
+Tests: 4, Assertions: 4, Failures: 1.</pre>
+</section>
+</section>
+<section id="test-dependencies">
+<h2>Test Dependencies<a class="headerlink" href="#test-dependencies" title="Link to this heading"></a></h2>
+<section id="depends">
+<span id="appendixes-attributes-depends"></span><h3><code class="docutils literal notranslate"><span class="pre">Depends</span></code><a class="headerlink" href="#depends" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">Depends(string</span> <span class="pre">$methodName)</span></code> attribute can be used to specify that a test
+<a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-test-dependencies"><span class="std std-ref">depends</span></a>
+on another test that is declared in the same test case class.</p>
+<p>Any value that is passed from a producer (a depended-upon test) to a consumer
+(the depending test) is passed without cloning it.</p>
+</section>
+<section id="dependsusingdeepclone">
+<span id="appendixes-attributes-dependsusingdeepclone"></span><h3><code class="docutils literal notranslate"><span class="pre">DependsUsingDeepClone</span></code><a class="headerlink" href="#dependsusingdeepclone" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">DependsUsingDeepClone(string</span> <span class="pre">$methodName)</span></code> attribute can be used to specify that a test
+<a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-test-dependencies"><span class="std std-ref">depends</span></a>
+on another test that is declared in the same test case class.</p>
+<p>Any value that is passed from a producer (a depended-upon test) to a consumer
+(the depending test) is passed after deep-cloning it.</p>
+</section>
+<section id="dependsusingshallowclone">
+<span id="appendixes-attributes-dependsusingshallowclone"></span><h3><code class="docutils literal notranslate"><span class="pre">DependsUsingShallowClone</span></code><a class="headerlink" href="#dependsusingshallowclone" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">DependsUsingShallowClone(string</span> <span class="pre">$methodName)</span></code> attribute can be used to specify that a test
+<a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-test-dependencies"><span class="std std-ref">depends</span></a>
+on another test that is declared in the same test case class.</p>
+<p>Any value that is passed from a producer (a depended-upon test) to a consumer
+(the depending test) is passed after shallow-cloning it.</p>
+</section>
+<section id="dependsexternal">
+<span id="appendixes-attributes-dependsexternal"></span><h3><code class="docutils literal notranslate"><span class="pre">DependsExternal</span></code><a class="headerlink" href="#dependsexternal" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">DependsExternal(string</span> <span class="pre">$className,</span> <span class="pre">string</span> <span class="pre">$methodName)</span></code> attribute can be used
+to specify that a test <a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-test-dependencies"><span class="std std-ref">depends</span></a>
+on another test that is declared in another test case class.</p>
+<p>Any value that is passed from a producer (a depended-upon test) to a consumer
+(the depending test) is passed without cloning it.</p>
+</section>
+<section id="dependsexternalusingdeepclone">
+<span id="appendixes-attributes-dependsexternalusingdeepclone"></span><h3><code class="docutils literal notranslate"><span class="pre">DependsExternalUsingDeepClone</span></code><a class="headerlink" href="#dependsexternalusingdeepclone" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">DependsExternalUsingDeepClone(string</span> <span class="pre">$className,</span> <span class="pre">string</span> <span class="pre">$methodName)</span></code> attribute can be used
+to specify that a test <a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-test-dependencies"><span class="std std-ref">depends</span></a>
+on another test that is declared in another test case class.</p>
+<p>Any value that is passed from a producer (a depended-upon test) to a consumer
+(the depending test) is passed after deep-cloning it.</p>
+</section>
+<section id="dependsexternalusingshallowclone">
+<span id="appendixes-attributes-dependsexternalusingshallowclone"></span><h3><code class="docutils literal notranslate"><span class="pre">DependsExternalUsingShallowClone</span></code><a class="headerlink" href="#dependsexternalusingshallowclone" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">DependsExternalUsingShallowClone(string</span> <span class="pre">$className,</span> <span class="pre">string</span> <span class="pre">$methodName)</span></code> attribute can be used
+to specify that a test <a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-test-dependencies"><span class="std std-ref">depends</span></a>
+on another test that is declared in another test case class.</p>
+<p>Any value that is passed from a producer (a depended-upon test) to a consumer
+(the depending test) is passed after shallow-cloning it.</p>
+</section>
+<section id="dependsonclass">
+<span id="appendixes-attributes-dependsonclass"></span><h3><code class="docutils literal notranslate"><span class="pre">DependsOnClass</span></code><a class="headerlink" href="#dependsonclass" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">DependsOnClass(string</span> <span class="pre">$className)</span></code> attribute can be used to specify that a test
+<a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-test-dependencies"><span class="std std-ref">depends</span></a>
+on all tests of another test case class.</p>
+<p>Any value that is passed from a producer (a depended-upon test) to a consumer
+(the depending test) is passed without cloning it.</p>
+</section>
+<section id="dependsonclassusingdeepclone">
+<span id="appendixes-attributes-dependsonclassusingdeepclone"></span><h3><code class="docutils literal notranslate"><span class="pre">DependsOnClassUsingDeepClone</span></code><a class="headerlink" href="#dependsonclassusingdeepclone" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">DependsOnClassUsingDeepClone(string</span> <span class="pre">$className)</span></code> attribute can be used to specify that a test
+<a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-test-dependencies"><span class="std std-ref">depends</span></a>
+on all tests of another test case class.</p>
+<p>Any value that is passed from a producer (a depended-upon test) to a consumer
+(the depending test) is passed after deep-cloning it.</p>
+</section>
+<section id="dependsonclassusingshallowclone">
+<span id="appendixes-attributes-dependsonclassusingshallowclone"></span><h3><code class="docutils literal notranslate"><span class="pre">DependsOnClassUsingShallowClone</span></code><a class="headerlink" href="#dependsonclassusingshallowclone" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">DependsOnClassUsingShallowClone(string</span> <span class="pre">$className)</span></code> attribute can be used to specify that a test
+<a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-test-dependencies"><span class="std std-ref">depends</span></a>
+on all tests of another test case class.</p>
+<p>Any value that is passed from a producer (a depended-upon test) to a consumer
+(the depending test) is passed after shallow-cloning it.</p>
+</section>
+</section>
+<section id="test-groups">
+<h2>Test Groups<a class="headerlink" href="#test-groups" title="Link to this heading"></a></h2>
+<section id="group">
+<span id="appendixes-attributes-group"></span><h3><code class="docutils literal notranslate"><span class="pre">Group</span></code><a class="headerlink" href="#group" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">Group(string</span> <span class="pre">$name)</span></code> attribute can be used to assign tests to test groups.</p>
+<p>Groups can be used, for instance, to <a class="reference internal" href="textui.html#textui-command-line-options-selection"><span class="std std-ref">select</span></a>
+which tests should be run.</p>
+<p>The strings <code class="docutils literal notranslate"><span class="pre">small</span></code>, <code class="docutils literal notranslate"><span class="pre">medium</span></code>, and <code class="docutils literal notranslate"><span class="pre">large</span></code> may not be used as group names.</p>
+</section>
+<section id="small">
+<span id="appendixes-attributes-small"></span><h3><code class="docutils literal notranslate"><span class="pre">Small</span></code><a class="headerlink" href="#small" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">Small</span></code> attribute marks the tests of a test case class as small. These tests are
+added to a special test group named <code class="docutils literal notranslate"><span class="pre">small</span></code> that has special semantics.</p>
+<p>The size of a test is relevant in the context of
+<a class="reference internal" href="risky-tests.html#risky-tests-test-execution-timeout"><span class="std std-ref">test execution timeouts</span></a>, for instance.</p>
+<p>Tests that are marked as small cause the lines of code that they cover to be highlighted
+by a darker shade of green in the HTML <a class="reference internal" href="code-coverage.html#code-coverage"><span class="std std-ref">code coverage</span></a> report compared
+to tests that are marked <a class="reference internal" href="#appendixes-attributes-medium"><span class="std std-ref">medium</span></a> or
+<a class="reference internal" href="#appendixes-attributes-large"><span class="std std-ref">large</span></a>.</p>
+</section>
+<section id="medium">
+<span id="appendixes-attributes-medium"></span><h3><code class="docutils literal notranslate"><span class="pre">Medium</span></code><a class="headerlink" href="#medium" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">Medium</span></code> attribute marks the tests of a test case class as medium. These tests are
+added to a special test group named <code class="docutils literal notranslate"><span class="pre">medium</span></code> that has special semantics.</p>
+<p>The size of a test is relevant in the context of
+<a class="reference internal" href="risky-tests.html#risky-tests-test-execution-timeout"><span class="std std-ref">test execution timeouts</span></a>, for instance.</p>
+<p>Tests that are marked as medium cause the lines of code that they cover to be highlighted
+by a darker shade of green in the HTML <a class="reference internal" href="code-coverage.html#code-coverage"><span class="std std-ref">code coverage</span></a> report compared
+to tests that are marked <a class="reference internal" href="#appendixes-attributes-large"><span class="std std-ref">large</span></a> and by a lighter shade
+of green compared to test that are marked small <a class="reference internal" href="#appendixes-attributes-small"><span class="std std-ref">small</span></a>.</p>
+</section>
+<section id="large">
+<span id="appendixes-attributes-large"></span><h3><code class="docutils literal notranslate"><span class="pre">Large</span></code><a class="headerlink" href="#large" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">Large</span></code> attribute marks the tests of a test case class as large. These tests are
+added to a special test group named <code class="docutils literal notranslate"><span class="pre">large</span></code> that has special semantics.</p>
+<p>The size of a test is relevant in the context of
+<a class="reference internal" href="risky-tests.html#risky-tests-test-execution-timeout"><span class="std std-ref">test execution timeouts</span></a>, for instance.</p>
+<p>Tests that are marked as large cause the lines of code that they cover to be highlighted
+by a lighter shade of green in the HTML <a class="reference internal" href="code-coverage.html#code-coverage"><span class="std std-ref">code coverage</span></a> report compared
+to tests that are marked <a class="reference internal" href="#appendixes-attributes-medium"><span class="std std-ref">medium</span></a> or
+<a class="reference internal" href="#appendixes-attributes-small"><span class="std std-ref">small</span></a>.</p>
+</section>
+<section id="ticket">
+<span id="appendixes-attributes-ticket"></span><h3><code class="docutils literal notranslate"><span class="pre">Ticket</span></code><a class="headerlink" href="#ticket" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">Ticket(string</span> <span class="pre">$text)</span></code> attribute is an alias for <code class="docutils literal notranslate"><span class="pre">Group(string</span> <span class="pre">$text)</span></code>.</p>
+</section>
+</section>
+<section id="template-methods">
+<h2>Template Methods<a class="headerlink" href="#template-methods" title="Link to this heading"></a></h2>
+<section id="beforeclass">
+<span id="appendixes-attributes-beforeclass"></span><h3><code class="docutils literal notranslate"><span class="pre">BeforeClass</span></code><a class="headerlink" href="#beforeclass" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">BeforeClass(int</span> <span class="pre">$priority</span> <span class="pre">=</span> <span class="pre">0)</span></code> attribute can be used to specify that a public static method should
+be invoked before the first test method of a test case class is run. This is the same
+phase where a method named <code class="docutils literal notranslate"><span class="pre">setUpBeforeClass()</span></code> would be invoked. We refer to such
+methods as “before test class” methods.</p>
+<p>When a test case class has more than one methods with the <code class="docutils literal notranslate"><span class="pre">BeforeClass</span></code> attribute then,
+by default, the test runner assumes that the order in which these methods are invoked
+does not matter. If this assumption is wrong and the order in which these methods are
+invoked does matter then the attribute’s optional <code class="docutils literal notranslate"><span class="pre">$priority</span></code> argument (non-negative
+integer) can be used to define the desired invocation order: a method with a higher
+<code class="docutils literal notranslate"><span class="pre">$priority</span></code> value is invoked before a method with a lower <code class="docutils literal notranslate"><span class="pre">$priority</span></code> value.</p>
+</section>
+<section id="before">
+<span id="appendixes-attributes-before"></span><h3><code class="docutils literal notranslate"><span class="pre">Before</span></code><a class="headerlink" href="#before" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">Before(int</span> <span class="pre">$priority</span> <span class="pre">=</span> <span class="pre">0)</span></code> attribute can be used to specify that a protected non-static method should
+be invoked before each test method of a test case class is run. This is the same phase
+where a method named <code class="docutils literal notranslate"><span class="pre">setUp()</span></code> would be invoked. We refer to such methods as “before test”
+methods.</p>
+<p>When a test case class has more than one methods with the <code class="docutils literal notranslate"><span class="pre">Before</span></code> attribute then,
+by default, the test runner assumes that the order in which these methods are invoked
+does not matter. If this assumption is wrong and the order in which these methods are
+invoked does matter then the attribute’s optional <code class="docutils literal notranslate"><span class="pre">$priority</span></code> argument (non-negative
+integer) can be used to define the desired invocation order: a method with a higher
+<code class="docutils literal notranslate"><span class="pre">$priority</span></code> value is invoked before a method with a lower <code class="docutils literal notranslate"><span class="pre">$priority</span></code> value.</p>
+</section>
+<section id="precondition">
+<span id="appendixes-attributes-precondition"></span><h3><code class="docutils literal notranslate"><span class="pre">PreCondition</span></code><a class="headerlink" href="#precondition" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">PreCondition(int</span> <span class="pre">$priority</span> <span class="pre">=</span> <span class="pre">0)</span></code> attribute can be used to specify that a protected non-static method should
+be invoked before each test method (but after any “before test” methods) of a test case class is run.
+This is the same phase where a method named <code class="docutils literal notranslate"><span class="pre">assertPreConditions()</span></code> would be invoked.
+We refer to such methods as “pre-condition” methods.</p>
+<p>When a test case class has more than one methods with the <code class="docutils literal notranslate"><span class="pre">PreCondition</span></code> attribute then,
+by default, the test runner assumes that the order in which these methods are invoked
+does not matter. If this assumption is wrong and the order in which these methods are
+invoked does matter then the attribute’s optional <code class="docutils literal notranslate"><span class="pre">$priority</span></code> argument (non-negative
+integer) can be used to define the desired invocation order: a method with a higher
+<code class="docutils literal notranslate"><span class="pre">$priority</span></code> value is invoked before a method with a lower <code class="docutils literal notranslate"><span class="pre">$priority</span></code> value.</p>
+</section>
+<section id="postcondition">
+<span id="appendixes-attributes-postcondition"></span><h3><code class="docutils literal notranslate"><span class="pre">PostCondition</span></code><a class="headerlink" href="#postcondition" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">PostCondition(int</span> <span class="pre">$priority</span> <span class="pre">=</span> <span class="pre">0)</span></code> attribute can be used to specify that a protected non-static method should
+be invoked after each test method (but before any “after test” methods) of a test case class is run.
+This is the same phase where a method named <code class="docutils literal notranslate"><span class="pre">assertPostConditions()</span></code> would be invoked.
+We refer to such methods as “post-condition” methods.</p>
+<p>When a test case class has more than one methods with the <code class="docutils literal notranslate"><span class="pre">PostCondition</span></code> attribute then,
+by default, the test runner assumes that the order in which these methods are invoked
+does not matter. If this assumption is wrong and the order in which these methods are
+invoked does matter then the attribute’s optional <code class="docutils literal notranslate"><span class="pre">$priority</span></code> argument (non-negative
+integer) can be used to define the desired invocation order: a method with a higher
+<code class="docutils literal notranslate"><span class="pre">$priority</span></code> value is invoked before a method with a lower <code class="docutils literal notranslate"><span class="pre">$priority</span></code> value.</p>
+</section>
+<section id="after">
+<span id="appendixes-attributes-after"></span><h3><code class="docutils literal notranslate"><span class="pre">After</span></code><a class="headerlink" href="#after" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">After(int</span> <span class="pre">$priority</span> <span class="pre">=</span> <span class="pre">0)</span></code> attribute can be used to specify that a protected non-static method should
+be invoked after each test method of a test case class is run. This is the same phase where
+a method named <code class="docutils literal notranslate"><span class="pre">tearDown()</span></code> would be invoked. We refer to such methods as “after test” methods.</p>
+<p>When a test case class has more than one methods with the <code class="docutils literal notranslate"><span class="pre">After</span></code> attribute then,
+by default, the test runner assumes that the order in which these methods are invoked
+does not matter. If this assumption is wrong and the order in which these methods are
+invoked does matter then the attribute’s optional <code class="docutils literal notranslate"><span class="pre">$priority</span></code> argument (non-negative
+integer) can be used to define the desired invocation order: a method with a higher
+<code class="docutils literal notranslate"><span class="pre">$priority</span></code> value is invoked before a method with a lower <code class="docutils literal notranslate"><span class="pre">$priority</span></code> value.</p>
+</section>
+<section id="afterclass">
+<span id="appendixes-attributes-afterclass"></span><h3><code class="docutils literal notranslate"><span class="pre">AfterClass</span></code><a class="headerlink" href="#afterclass" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">AfterClass(int</span> <span class="pre">$priority</span> <span class="pre">=</span> <span class="pre">0)</span></code> attribute can be used to specify that a public static method should
+be invoked after the last test method of a test case class is run. This is the same phase
+where a method named <code class="docutils literal notranslate"><span class="pre">tearDownAfterClass()</span></code> would be invoked. We refer to such methods
+as “after test class” methods.</p>
+<p>When a test case class has more than one methods with the <code class="docutils literal notranslate"><span class="pre">AfterClass</span></code> attribute then,
+by default, the test runner assumes that the order in which these methods are invoked
+does not matter. If this assumption is wrong and the order in which these methods are
+invoked does matter then the attribute’s optional <code class="docutils literal notranslate"><span class="pre">$priority</span></code> argument (non-negative
+integer) can be used to define the desired invocation order: a method with a higher
+<code class="docutils literal notranslate"><span class="pre">$priority</span></code> value is invoked before a method with a lower <code class="docutils literal notranslate"><span class="pre">$priority</span></code> value.</p>
+</section>
+</section>
+<section id="test-isolation">
+<h2>Test Isolation<a class="headerlink" href="#test-isolation" title="Link to this heading"></a></h2>
+<section id="backupglobals">
+<span id="appendixes-attributes-backupglobals"></span><h3><code class="docutils literal notranslate"><span class="pre">BackupGlobals</span></code><a class="headerlink" href="#backupglobals" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">BackupGlobals</span></code> attribute can be used to specify that global and super-global variables
+should be backed up before a test and then restored after the test has been run.</p>
+</section>
+<section id="excludeglobalvariablefrombackup">
+<span id="appendixes-attributes-excludeglobalvariablefrombackup"></span><h3><code class="docutils literal notranslate"><span class="pre">ExcludeGlobalVariableFromBackup</span></code><a class="headerlink" href="#excludeglobalvariablefrombackup" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">ExcludeGlobalVariableFromBackup($globalVariableName)</span></code> attribute can be used to exclude
+the specified global variable from the backup and restore operations for global and super-global
+variables.</p>
+</section>
+<section id="backupstaticproperties">
+<span id="appendixes-attributes-backupstaticproperties"></span><h3><code class="docutils literal notranslate"><span class="pre">BackupStaticProperties</span></code><a class="headerlink" href="#backupstaticproperties" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">BackupStaticProperties</span></code> attribute can be used to specify that static properties of classes
+should be backed up before a test and then restored after the test has been run.</p>
+</section>
+<section id="excludestaticpropertyfrombackup">
+<span id="appendixes-attributes-excludestaticpropertyfrombackup"></span><h3><code class="docutils literal notranslate"><span class="pre">ExcludeStaticPropertyFromBackup</span></code><a class="headerlink" href="#excludestaticpropertyfrombackup" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">ExcludeStaticPropertyFromBackup(string</span> <span class="pre">$className,</span> <span class="pre">string</span> <span class="pre">$propertyName)</span></code> attribute can be
+used to exclude the specified static property from the backup and restore operations for static
+properties of classes.</p>
+</section>
+<section id="runinseparateprocess">
+<span id="appendixes-attributes-runinseparateprocess"></span><h3><code class="docutils literal notranslate"><span class="pre">RunInSeparateProcess</span></code><a class="headerlink" href="#runinseparateprocess" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">RunInSeparateProcess</span></code> attribute can be used to specify that a test should
+be run in a separate process.</p>
+</section>
+<section id="runtestsinseparateprocesses">
+<span id="appendixes-attributes-runtestsinseparateprocesses"></span><h3><code class="docutils literal notranslate"><span class="pre">RunTestsInSeparateProcesses</span></code><a class="headerlink" href="#runtestsinseparateprocesses" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">RunTestsInSeparateProcesses</span></code> attribute can be used to specify that all tests
+of a test case class should be run in separate processes (one separate process per test).</p>
+</section>
+<section id="runclassinseparateprocess">
+<span id="appendixes-attributes-runclassinseparateprocess"></span><h3><code class="docutils literal notranslate"><span class="pre">RunClassInSeparateProcess</span></code><a class="headerlink" href="#runclassinseparateprocess" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">RunClassInSeparateProcess</span></code> attribute can be used to specify that all tests
+of a test case class should be run in a (single) separate process.</p>
+</section>
+<section id="preserveglobalstate">
+<span id="appendixes-attributes-preserveglobalstate"></span><h3><code class="docutils literal notranslate"><span class="pre">PreserveGlobalState</span></code><a class="headerlink" href="#preserveglobalstate" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">PreserveGlobalState(bool</span> <span class="pre">$enabled)</span></code> attribute can be used to specify whether
+the global state of the main PHPUnit test runner process should be made available in
+the child process when a test is run in a separate process.</p>
+</section>
+</section>
+<section id="skipping-tests">
+<h2>Skipping Tests<a class="headerlink" href="#skipping-tests" title="Link to this heading"></a></h2>
+<section id="requiresphp">
+<span id="appendixes-attributes-requiresphp"></span><h3><code class="docutils literal notranslate"><span class="pre">RequiresPhp</span></code><a class="headerlink" href="#requiresphp" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">RequiresPhp(string</span> <span class="pre">$versionRequirement)</span></code> attribute can be used to
+<a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-skipping-tests-skipping-tests-using-attributes"><span class="std std-ref">skip the execution of a test</span></a>
+when the PHP version used to run PHPUnit does not match the specified version requirement.</p>
+<p><code class="docutils literal notranslate"><span class="pre">$versionRequirement</span></code> can either be a <a class="reference external" href="https://www.php.net/manual/en/function.version-compare.php">version number string</a>
+that is optionally preceded by an operator supported by PHP’s <code class="docutils literal notranslate"><span class="pre">version_compare()</span></code>
+function or a <a class="reference external" href="https://getcomposer.org/doc/articles/versions.md#writing-version-constraints">version constraint</a>
+in the syntax that is supported by Composer.</p>
+<p>Here are some examples:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#[RequiresPhp('8.3.0')]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#[RequiresPhp('&gt;=</span> <span class="pre">8.3.0')]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#[RequiresPhp('^8.3')]</span></code></p></li>
+</ul>
+</section>
+<section id="requiresphpextension">
+<span id="appendixes-attributes-requiresphpextension"></span><h3><code class="docutils literal notranslate"><span class="pre">RequiresPhpExtension</span></code><a class="headerlink" href="#requiresphpextension" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">RequiresPhpExtension(string</span> <span class="pre">$extension[,</span> <span class="pre">string</span> <span class="pre">$versionRequirement])</span></code> attribute can be used to
+<a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-skipping-tests-skipping-tests-using-attributes"><span class="std std-ref">skip the execution of a test</span></a>
+when the specified PHP extension is not available. The optional <code class="docutils literal notranslate"><span class="pre">$versionRequirement</span></code> argument can be used
+to specify a version requirement for this PHP extension and follows the same format that is described
+<a class="reference internal" href="#appendixes-attributes-requiresphp"><span class="std std-ref">here</span></a>.</p>
+<p>Here are some examples:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#[RequiresPhpExtension('mysqli')]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#[RequiresPhpExtension('mysqli',</span> <span class="pre">'&gt;=</span> <span class="pre">8.3.0')]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#[RequiresPhpExtension('mysqli',</span> <span class="pre">'^8.3')]</span></code></p></li>
+</ul>
+</section>
+<section id="requiressetting">
+<span id="appendixes-attributes-requiressetting"></span><h3><code class="docutils literal notranslate"><span class="pre">RequiresSetting</span></code><a class="headerlink" href="#requiressetting" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">RequiresSetting(string</span> <span class="pre">$setting,</span> <span class="pre">string</span> <span class="pre">$value)</span></code> attribute can be used to
+<a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-skipping-tests-skipping-tests-using-attributes"><span class="std std-ref">skip the execution of a test</span></a>
+when the specified PHP configuration setting is not set to the expected value.</p>
+</section>
+<section id="requiresphpunit">
+<span id="appendixes-attributes-requiresphpunit"></span><h3><code class="docutils literal notranslate"><span class="pre">RequiresPhpunit</span></code><a class="headerlink" href="#requiresphpunit" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">RequiresPhpunit(string</span> <span class="pre">$versionRequirement)</span></code> attribute can be used to
+<a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-skipping-tests-skipping-tests-using-attributes"><span class="std std-ref">skip the execution of a test</span></a>
+when the PHPUnit version does not match the specified version requirement.</p>
+<p><code class="docutils literal notranslate"><span class="pre">$versionRequirement</span></code> can either be a <a class="reference external" href="https://www.php.net/manual/en/function.version-compare.php">version number string</a>
+that is optionally preceded by an operator supported by PHP’s <code class="docutils literal notranslate"><span class="pre">version_compare()</span></code>
+function or a <a class="reference external" href="https://getcomposer.org/doc/articles/versions.md#writing-version-constraints">version constraint</a>
+in the syntax that is supported by Composer.</p>
+<p>Here are some examples:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">#[RequiresPhpunit('10.1.0')]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#[RequiresPhpunit('&gt;=</span> <span class="pre">10.1.0')]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#[RequiresPhpunit('^10.1')]</span></code></p></li>
+</ul>
+</section>
+<section id="requiresphpunitextension">
+<span id="appendixes-attributes-requiresphpunitextension"></span><h3><code class="docutils literal notranslate"><span class="pre">RequiresPhpunitExtension</span></code><a class="headerlink" href="#requiresphpunitextension" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">RequiresPhpunitExtension(string</span> <span class="pre">$extensionClass)</span></code> attribute can be used to
+<a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-skipping-tests-skipping-tests-using-attributes"><span class="std std-ref">skip the execution of a test</span></a>
+when the PHPUnit extension identified by its bootstrap class is not available.</p>
+</section>
+<section id="requiresfunction">
+<span id="appendixes-attributes-requiresfunction"></span><h3><code class="docutils literal notranslate"><span class="pre">RequiresFunction</span></code><a class="headerlink" href="#requiresfunction" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">RequiresFunction(string</span> <span class="pre">$functionName)</span></code> attribute can be used to
+<a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-skipping-tests-skipping-tests-using-attributes"><span class="std std-ref">skip the execution of a test</span></a>
+when the specified global function is not declared.</p>
+</section>
+<section id="requiresmethod">
+<span id="appendixes-attributes-requiresmethod"></span><h3><code class="docutils literal notranslate"><span class="pre">RequiresMethod</span></code><a class="headerlink" href="#requiresmethod" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">RequiresMethod(string</span> <span class="pre">$className,</span> <span class="pre">string</span> <span class="pre">$methodName)</span></code> attribute can be used to
+<a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-skipping-tests-skipping-tests-using-attributes"><span class="std std-ref">skip the execution of a test</span></a>
+when the specified method is not declared.</p>
+</section>
+<section id="requiresoperatingsystem">
+<span id="appendixes-attributes-requiresoperatingsystem"></span><h3><code class="docutils literal notranslate"><span class="pre">RequiresOperatingSystem</span></code><a class="headerlink" href="#requiresoperatingsystem" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">RequiresOperatingSystem(string</span> <span class="pre">$regularExpression)</span></code> attribute can be used to
+<a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-skipping-tests-skipping-tests-using-attributes"><span class="std std-ref">skip the execution of a test</span></a>
+when the specified regular expression does not match the value of the <code class="docutils literal notranslate"><span class="pre">PHP_OS</span></code> constant provided by PHP.</p>
+</section>
+<section id="requiresoperatingsystemfamily">
+<span id="appendixes-attributes-requiresoperatingsystemfamily"></span><h3><code class="docutils literal notranslate"><span class="pre">RequiresOperatingSystemFamily</span></code><a class="headerlink" href="#requiresoperatingsystemfamily" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class Level</p></th>
+<th class="head"><p>Method Level</p></th>
+<th class="head"><p>Repeatable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">RequiresOperatingSystemFamily(string</span> <span class="pre">$operatingSystemFamily)</span></code> attribute can be used to
+<a class="reference internal" href="writing-tests-for-phpunit.html#writing-tests-for-phpunit-skipping-tests-skipping-tests-using-attributes"><span class="std std-ref">skip the execution of a test</span></a>
+when the specified string is not identical to the value of the <code class="docutils literal notranslate"><span class="pre">PHP_OS_FAMILY</span></code> constant provided by PHP.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="assertions.html" class="btn btn-neutral float-left" title="1. Assertions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="annotations.html" class="btn btn-neutral float-right" title="3. Annotations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; <a href="copyright.html">Copyright</a> 2026, Sebastian Bergmann.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
